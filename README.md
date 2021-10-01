@@ -9,20 +9,21 @@ Inside this repository will be a tutorial on how to go from zero to hero on the 
 3. [Creating a lab](#lab-creation)
    1. [Virtual Machine Hypervisors](#vmhypervisor)
 4. [Learning the Essentials of CentOS Enterprise Linux 7 Administration](#essentials)
-5. [Installing CentOS Linux 7](#install-centos)
-   1. [Downloading CentOS](#download-centos)
-   2. [Media Types](#media)
-   3. [VirtualBox Network](#virtualbox-network)
-6. [Help and Archiving](#help)
-7. [Working on CLI/Reading Files](#cli-read-files)
-8. [Permission and Root Access](#permissions)
-9. [Using Vi/Piping and Redirection](#vim-editor)
-10. [SSH and Screen](#ssh-screen-login)  
-    1.  [SSH CLIENTS](#ssh-screen-login)  
-        1.  [Putty]()
-        2.  [Windows 10 default command prompt]()
-        3.  [Linux SSH]()
-12. [Markdown](#md)
+   1. [Course Overview](#overview)
+   1. [Installing CentOS Linux 7](#install-centos)
+      1. [Downloading CentOS](#download-centos)
+      2. [Media Types](#media)
+      3. [VirtualBox Network](#virtualbox-network)
+   1. [Help and Archiving](#help)
+   1. [Working on CLI/Reading Files](#cli-read-files)
+   1. [Permission and Root Access](#permissions)
+   1. [Using Vi/Piping and Redirection](#vim-editor)
+   1. [SSH and Screen](#ssh-screen-login)  
+      1.  [SSH CLIENTS](#ssh-screen-login)  
+          1.  [Putty](#putty)
+          1.  [Windows 10 default command prompt](#default-cmd)
+          1.  [Linux SSH](#redhat-ssh)
+5. [Markdown](#md)
 
 ## Prerequisites <a name="prereq"></a>
 
@@ -30,9 +31,9 @@ Inside this repository will be a tutorial on how to go from zero to hero on the 
 
 ## Demo some basic tools <a name="demo-tools"></a>
 
- *In this demonstration you will need to have an open lab, and some basic knowledge of system administration. If you do not have a lab created, that's okay just continue to [Creating a lab](#lab-creation) portion of this repository. You can then continue on with the demo after if you'd like, or you can just jump right into the rest of the repo.*
+ * In this demonstration you will need to have an open lab, and some basic knowledge of system administration. If you do not have a lab created, that's okay just continue to [Creating a lab](#lab-creation) portion of this repository. You can then continue on with the demo after if you'd like, or you can just jump right into the rest of the repo.
 
- I will begin by showing some simple commands that you can use as well as some different types of languages.
+ * I will begin by showing some simple commands that you can use as well as some different types of *languages*.
 
 
  1. By entering ```cat /etc/system-release``` on the CLI, you will see we are using CentOS Linux 7.9.2009. (Core) on the current system. The command ```cat``` is to display a file's contents.  
@@ -159,7 +160,7 @@ crw--w----. 1 cellis tty 136, 0 Oct  1 04:46 /dev/pts/0
 
 ## Creating a lab <a name="lab-creation"></a>
 
-1. You will need to create a lab using a hypervisor. The most likely scenario is a free or open source software, but you can also use a closed source software if you're willing to pay for more stable features but deal with the certain support resolution restrictions.
+1. You will need to create a lab using a hypervisor which will be shown in more detail under the installation process. The most likely scenario is a free or open source software, but you can also use a closed source software if you're willing to pay for more stable features but deal with the certain support resolution restrictions.
 
    * This is where we will use your host pc to connect to your virtual machine. Usually this consists of 3 machines; the CentOS 7 master, CentOS 7 GUI server1, and CentOS 7 CLI server2. The command line(CLI) will be more useful for you than the graphical user interface(GUI) since we will be using Enterprise systems, which mainly consists of remote connections via the CLI.  The master system will really be of less use to you since you probably do not have a local web server setup which requires an installation of CentOS 7 for the web server or ftp server. You can also mimic the same remote installs from a web server by looking at CentOS distributions that are available to download via mirror servers.
 
@@ -196,28 +197,41 @@ crw--w----. 1 cellis tty 136, 0 Oct  1 04:46 /dev/pts/0
 
 ## Learning the Essentials of CentOS Enterprise Linux 7 Administration <a name="essentials"></a>
 
- * ### Course Overview
+ * ### Course Overview <a name="overview"></a>
 
-  * As we make our way through this repository you may find that there are things that you may not know or things that may not be mentioned here. That is okay everything is a learning experience and we have more courses to come after the Essentials repository to help you better understand CentOS Enterprise Linux 7.
+  * As we make our way through this repository you may find that there are things that you may not know or things that may not be mentioned here. That's okay because every hurdle is a learning experience. I have more courses to come after this repository to help you better understand CentOS Enterprise Linux 7.
 
-## Installing Centos Linux 7 <a name="install-centos"></a>
+* ### Installing Centos Linux 7 <a name="install-centos"></a>
 
-## Help and Archiving <a name="help"></a>
+ * #### Downloading CentOS <a name="download-centos"></a>
 
-## Working on the CLI/Reading Files <a name="cli-read-files"></a>
+ * #### Media Types <a name="media"></a>
 
-## Permissions and Root Access <a name="permissions"></a>
+ * #### VirtualBox Networking <a name="virtualbox-network"></a>
 
-## Using Vi/Piping and Redirection <a name="vim-editor"></a>
+ * #### Installing from DVD
 
-## SSH and Screen <a name="ssh-screen-login"></a>
+ * #### Installing from the Networking
 
- * ### SSH CLIENTS <a name="clients"></a>
+ * #### Adding the GUI
 
-  * ### Putty <a name="putty"></a>
 
-  * ### Windows 10 default command promp <a name="cmd"></a>
+* ### Help and Archiving <a name="help"></a>
 
-  * ### Linux SSH <a name="RedHat-SSH"></a>
+* ### Working on the CLI/Reading Files <a name="cli-read-files"></a>
+
+* ### Permissions and Root Access <a name="permissions"></a>
+
+* ### Using Vi/Piping and Redirection <a name="vim-editor"></a>
+
+* ### SSH and Screen <a name="ssh-screen-login"></a>
+
+  * ### SSH CLIENTS <a name="clients"></a>
+
+  * ##### Putty <a name="putty"></a>
+
+  * ##### Windows 10 default command promp <a name="cmd"></a>
+
+  * ##### Linux SSH <a name="RedHat-SSH"></a>
 
 ## Markdown <a name="md"></a>
