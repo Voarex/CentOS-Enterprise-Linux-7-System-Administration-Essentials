@@ -1,5 +1,5 @@
 # CentOS Enterprise Linux 7 - System Administration Essentials
-This will be my very detailed tutorial for how to go from zero to hero for the essentials of CentOS Linux 7 System Administration.
+This will be my very detailed tutorial for how to go from zero to hero on the essentials of CentOS Linux 7 System Administration.
 
 ## Table of Contents
 1. [Prerequisites](#prereq)
