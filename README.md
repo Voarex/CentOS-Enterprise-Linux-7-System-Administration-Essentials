@@ -12,11 +12,11 @@ This will be my very detailed tutorial for how to go from zero to hero on the es
 7. [Permission and Root Access](#permissions)
 8. [Using Vi/Piping and Redirection](#vim-editor)
 9. [SSH and Screen](#ssh-screen-login)  
-   1.  SSH CLIENTS  
+  1.  SSH CLIENTS  
       1.  Putty
       2.  Windows 10 default command prompt
       3.  Linux SSH
-10. [Markdown](#md)   
+11. [Markdown](#md)   
 
 ### Prerequisites <a name="prereq"></a>
 
