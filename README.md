@@ -52,7 +52,7 @@ You will need to create a lab... When you have questions google is your best fri
 
   * ###### Citrix XenServer
 
-  * ^ Coming soon...
+  * ^ Coming soon... <3
 
 ### Learning the Essentials of CentOS Enterprise Linux 7 Administration <a name="essentials"></a>
 
