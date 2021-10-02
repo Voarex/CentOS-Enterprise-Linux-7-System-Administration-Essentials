@@ -11,9 +11,12 @@ Inside this repository will be a tutorial on how to go from zero to hero on the 
 4. [Learning the Essentials of CentOS Enterprise Linux 7 Administration](#essentials)
    1. [Course Overview](#overview)
    1. [Installing CentOS Linux 7](#install-centos)
-      1. [Downloading CentOS](#download-centos)
-      2. [Media Types](#media)
-      3. [VirtualBox Network](#virtualbox-network)
+      1. [Downloading CentOS](#install-centos)
+      1. [Media Types](#media)
+      2. [VirtualBox Network](#virtualbox-network)
+      3. [Installing from DVD](#install-dvd)
+      4. [Installing from Network](#install-network)
+      5. [Adding the GUI](#gui)
    1. [Help and Archiving](#help)
    1. [Working on CLI/Reading Files](#cli-read-files)
    1. [Permission and Root Access](#permissions)
@@ -21,8 +24,8 @@ Inside this repository will be a tutorial on how to go from zero to hero on the 
    1. [SSH and Screen](#ssh-screen-login)  
       1.  [SSH CLIENTS](#ssh-screen-login)  
           1.  [Putty](#putty)
-          1.  [Windows 10 default command prompt](#default-cmd)
-          1.  [Linux SSH](#redhat-ssh)
+          2.  [Windows 10 default command prompt](#default-cmd)
+          3.  [Linux SSH](#redhat-ssh)
 5. [Markdown](#md)
 
 ## Prerequisites <a name="prereq"></a>
@@ -197,13 +200,22 @@ crw--w----. 1 cellis tty 136, 0 Oct  1 04:46 /dev/pts/0
 
 ## Learning the Essentials of CentOS Enterprise Linux 7 Administration <a name="essentials"></a>
 
- * ### Course Overview <a name="overview"></a>
+* ### Installing Centos Enterprise Linux 7 Overview <a name="overview"></a>
 
-  * As we make our way through this repository you may find that there are things that you may not know or things that may not be mentioned here. That's okay because every hurdle is a learning experience. I have more courses to come after this repository to help you better understand CentOS Enterprise Linux 7.
+  * As we make our way through this repository you may find that there are things that you may not know or things that may not be mentioned here. That's okay because every hurdle is a learning experience. I will have more courses to come after this repository to help you better understand CentOS Enterprise Linux 7.  
 
-* ### Installing Centos Linux 7 <a name="install-centos"></a>
+  * If you go to [www.CentOS.org/download/](https://www.centOS.org/download/) and you will be able to filter through multiple types of downloads for x86_64 using CentOS Linux 7.  
+   1. Everything DVD - All that CentOS can provide 7GB+  
+   1. DVD - 4 GB Full Installation DVD  
+   1. Minimal - A CD size at 600MB, enough for a minimal install of CentOS.  
+   1. NetInstall - If you look through the website you can find other locations that are hidden where you will find a NetInstall at about 10MB for a pure NetInstall CD.
 
- * #### Downloading CentOS <a name="download-centos"></a>
+* #### Downloading CentOS <a name="download-centos"></a>
+
+ * During our installation of CentOS Linux 7, we will be able to install different types of CentOS as previously mentioned. We will be using a minimal install for both of our servers because you can always scale up. If you go to [www.CentOS.org/download/](https://www.centOS.org/download/) you will 
+
+
+ ![CentOS Option](https://imgs.developpaper.com/imgs/3204112588-5efd555297297_articlex.png)
 
  * #### Media Types <a name="media"></a>
 
