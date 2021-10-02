@@ -1,23 +1,26 @@
 # CentOS Enterprise Linux 7 - System Administration Essentials
+
 Inside this repository will be a tutorial on how to go from zero to hero on the essentials of CentOS Enterprise Linux 7 System Administration.
 
 ## Table of Contents
 1. [Prerequisites](#prereq)
    1. *[Having a basic understanding of System Administration](#prereq)*
+   1. *[Having a basic understanding of Markdown](#md)*
 2. [Demo some basic tools](#demo-tools)
    1. [Demo recap](#demo-recap)
 3. [Creating a lab](#lab-creation)
    1. [Virtual Machine Hypervisors](#vmhypervisor)
+      1. [Oracle VirtualBox](#oracle)
+      1. [VMware Fusion](#vmware)
 4. [Learning the Essentials of CentOS Enterprise Linux 7 Administration](#essentials)
    1. [Course Overview](#overview)
    1. [Installing CentOS Linux 7](#install-centos)
       1. [Downloading CentOS](#download-centos)
-      1. [Media Types](#media)
-      2. [VirtualBox Network](#virtualbox-network)
-      3. [Installing from DVD](#install-dvd)
-      4. [Installing from Network](#install-network)
-      5. [Adding the GUI](#gui)
-      6. [Add Guest Additions](#guest-additions)
+      1. [VirtualBox Network](#virtualbox-network)
+      2. [Installing from DVD](#install-dvd)
+      3. [Installing from Network](#install-network)
+      4. [Adding the GUI](#gui)
+      5. [Add Guest Additions](#guest-additions)
    1. [Help and Archiving](#help)
    1. [Working on CLI/Reading Files](#cli-read-files)
    1. [Permission and Root Access](#permissions)
@@ -27,11 +30,19 @@ Inside this repository will be a tutorial on how to go from zero to hero on the 
           1.  [Putty](#putty)
           2.  [Windows 10 default command prompt](#cmd)
           3.  [Linux SSH](#redhat-ssh)
-5. [Markdown](#md)
+
 
 ## Prerequisites <a name="prereq"></a>
 
- * *Having a basic understanding of System Administration is recommended for this repository and for the Demo, otherwise google is your best friend.*
+ 1. *Having a basic understanding of **[System Administration](https://victorops.com/blog/definitive-guide-for-being-a-system-administrator)** is recommended for this repository and for the Demo, otherwise [Google](www.google.com) is your best friend.* <a name="prereq"></a>
+
+ 2. *Having a basic understanding of **[Markdown](www.markdowntutorial.com)** will not be essential to your abilities on taking this course. It will be essential to you for taking notes professionally and staying organized. This will also help you learn how to use [Markdown](www.markdowntutorial.com) by repeatedly writing it.  
+ (7-22 Repetitions truly help your brain to learn something.)* <a name="md"></a>
+    * Markdown is an essential text editor and there are different flavors of Markdown depending on what you're using. For example, using shell commands on Github are called console commands.
+
+    * Below you can see a Markdown preview.
+     ![Markdown](https://res.cloudinary.com/practicaldev/image/fetch/s--CRJTTGM8--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/i/g595slgphyi9lkqz2u18.png)
+
 
 ## Demo some basic tools <a name="demo-tools"></a>
 
@@ -73,13 +84,11 @@ wc -l /etc/system-release
      * word ```-w```  
      * character ```-c```  
      * byte ```-b```  
-     * maximum line length ```-L```.                
+     * maximum line length ```-L```               
 ```console
 [cellis@master ~]$ wc /etc/system-release
   1  5 37  /etc/system-release
 ```
-
-
  3. If I want to check the date we can do that using the command ```date```.
 ```console
 [cellis@master ~]$ date
@@ -89,12 +98,11 @@ Fri Oct 1 03:57:58 EDT 2021
 ```console
 Wed Nov 10 03:15:34 EST 2021
 ```  
-  * If you'd like to check a past date, you can use ```date --date "40 days ago"```, etc.
+  * If you'd like to check a past date, you can use ```date --date "40 days ago"```, the same applies for time ```date --date "1 hour ago"```, etc.
 ```console
 Sun Aug 22 04:17:45 EDT 2021
+Fri Oct  1 02:57:45 EDT 2021
 ```
-
-
  4. Typing ```cal``` on the CLI, you are able to see your calendar.
     * By entering ```cal -3``` you are able to get a 3 month range of the current months in calendar format.
     * By entering ```cal 1 2021``` you can see any specific date in calendar format.
@@ -164,22 +172,29 @@ crw--w----. 1 cellis tty 136, 0 Oct  1 04:46 /dev/pts/0
 
 ## Creating a lab <a name="lab-creation"></a>
 
-1. You will need to create a lab using a hypervisor which will be shown in more detail under the installation process. The most likely scenario is a free or open source software, but you can also use a closed source software if you're willing to pay for more stable features but deal with the certain support resolution restrictions.
+1. You will need to create a lab using a hypervisor and the most likely scenario is a free or open source software, but you can also use a closed source software if you're willing to pay for more stable features but deal with the certain support resolution restrictions.
 
-   * This is where we will use your host pc to connect to your virtual machine. Usually this consists of 3 machines; the CentOS 7 master, CentOS 7 GUI server1, and CentOS 7 CLI server2. The command line(CLI) will be more useful for you than the graphical user interface(GUI) since we will be using Enterprise systems, which mainly consists of remote connections via the CLI.  The master system will really be of less use to you since you probably do not have a local web server setup which requires an installation of CentOS 7 for the web server or ftp server. You can also mimic the same remote installs from a web server by looking at CentOS distributions that are available to download via mirror servers.
+   * This is where we will use your host pc to connect to your virtual machine. Usually this consists of a few machines; Host System Using VirtualBox , the CentOS 7 master server, CentOS 7 GUI server1 server, and CentOS 7 CLI server2 server. The command line(CLI) will be more useful for you than the graphical user interface(GUI) since we will be using enterprise systems. That means those systems consist mainly of remote connections via the CLI.  The master system will really be of less use to you since you probably do not have a local web server setup and that requires an installation of CentOS 7 for the web server or ftp server. You can also mimic the same remote installs from a web server by looking at CentOS distributions that are available to download via mirror servers.
+   * Lab Environment Example using a hypervisor called [Oracle VirtualBox](#oracle).
+![Lab Environment](https://gblobscdn.gitbook.com/assets%2F-MJHPOTKFzF1tYpLSY49%2F-MYwo1xluj6lQk1NKhG8%2F-MYwoEBYEBvtzpq-y4Cy%2Fimage.png?alt=media&token=6d37be49-16fe-41e0-b736-fc7bd92b599e)
 
     ### Virtual Machine Hypervisors: <a name="vmhypervisor"></a>
 
-* ##### VirtualBox
+* ##### Oracle VirtualBox <a name="oracle"></a>
 
- VirtualBox is an [open source software][software] that allows you to create a virtual machine.
+ [Oracle VirtualBox][software] is an [open source software][open-source] that allows you to create a virtual machine.
+![VirtualBox](https://miro.medium.com/max/600/1*BXQXYg3Y-_2ougVn0bmumQ.png)
 
-* ##### VMWare Fusion
+* ##### VMWare Fusion <a name="vmware"></a>
 
-  You may also use VMware Fusion. This is an Enterprise [closed source software][Fusion] also known as [proprietary software][Fusion].
+  You may also use [VMware Fusion][fusion]. This is an Enterprise [closed source software][closed-source] also known as [proprietary software][proprietary].
+  ![VmWareFusion](https://upload.wikimedia.org/wikipedia/commons/8/8e/VMware_Fusion_Logo.png)
 
  [software]: https://www.virtualbox.org/wiki/Downloads
- [Fusion]: https://www.vmware.com/products/fusion/fusion-evaluation.html
+ [open-source]: https://en.wikipedia.org/wiki/Open-source_software
+ [proprietary]: https://en.wikipedia.org/wiki/Proprietary_software
+ [closed-source]: https://en.wikipedia.org/wiki/Proprietary_software
+ [fusion]: https://www.vmware.com/products/fusion/fusion-evaluation.html
 
   * ##### KVM
 
@@ -197,13 +212,13 @@ crw--w----. 1 cellis tty 136, 0 Oct  1 04:46 /dev/pts/0
 
   * ##### Citrix XenServer
 
-  * ^ Coming soon...
+  * ^ All hypervisors coming soon...
 
 ## Learning the Essentials of CentOS Enterprise Linux 7 Administration <a name="essentials"></a>
 
 * ### Installing Centos Enterprise Linux 7 Overview <a name="install-centos"></a> <a name="overview"></a>
 
-  * As we make our way through this repository you will be doing the following:  
+  * As we make our way through this portion of the repository you will be doing the following:  
   Downloading ISO files  
   VirtualBox Networking  
   Installing CentOS 7 from local media  
@@ -218,32 +233,37 @@ crw--w----. 1 cellis tty 136, 0 Oct  1 04:46 /dev/pts/0
 
   * You may find that there are things that you may not know that may not be mentioned here. That's okay because every hurdle is just a learning experience. I will have more courses to help you better understand CentOS Enterprise Linux 7, this course is just the Essential crash course.
 
-  * If you go to [www.CentOS.org/download/](https://www.centOS.org/download/) and you will be able to filter through multiple types of downloads for CentOS Linux 7 x86_64.  
+  * If you go to [www.CentOS.org/](https://www.centOS.org) you will be able to filter through multiple types of downloads for CentOS Linux 7 x86_64 which are as follows:  
    1. Everything DVD - All that CentOS can provide 7GB+  
    1. DVD - 4 GB Full Installation DVD  
-   1. Minimal - A CD size at 600MB, enough for a minimal install of CentOS.  
-   1. NetInstall - If you look through the website you can find other locations that are hidden where you will find a NetInstall at about 10MB for a pure NetInstall CD.
+   1. Minimal - A CD size install around 600MB, enough for a Minimal install of CentOS.  
+   1. NetInstall - If you look through the website you can find alternative downloads hidden, such as NetInstall which is about 10MB for a pure NetInstall i386.
 
-  * #####  
 
 * #### Downloading CentOS <a name="download-centos"></a>
 
- * During our installation of CentOS Linux 7, we will be able to install different types of CentOS as previously mentioned. We will be using a minimal install for both of our servers because you can always scale up. If you go to [www.CentOS.org/download/](https://www.centOS.org/download/) you will find the ISO's available for download. We will be choosing CentOS Linux 7 and choosing x86_64.
+ * During our download of CentOS Linux 7, we will be able to install different types of CentOS as previously mentioned during the overview. We will be using a minimal install for both of our servers because you can always scale up.
 
 
- ![CentOS Option](https://imgs.developpaper.com/imgs/3204112588-5efd555297297_articlex.png)
+* If you go to [www.CentOS.org](https://www.centOS.org) you will be given choices with tabs at the top and the two buttons under The CentOS Project. We will choose the [CentOS Linux](https://centos.org/centos-linux/) button or click the [Download](https://centos.org/download/) tab.
+![CentOS.org](https://blog.centos.org/wp-content/uploads/2020/07/Screenshot_20200730_111126.png)
 
- * #### Media Types <a name="media"></a>
+ * Once you've chosen CentOS Linux 7 you will be given a bunch of options. If you need to install a NetInstall of CentOS Linux 7 or if you want to see the [alternative downloads](https://wiki.centos.org/Download) or just a list of all the installs this will route you to www.wiki.centos.org/Download. There you can find all the types of installs mentioned prior.
+![CentOS Option](https://imgs.developpaper.com/imgs/3204112588-5efd555297297_articlex.png)
 
- * #### VirtualBox Networking <a name="virtualbox-network"></a>
 
- * #### Installing from DVD <a name="install-dvd"></a>
+* #### VirtualBox Networking <a name="virtualbox-network"></a>
 
- * #### Installing from the Networking <a name="install-network"></a>
+ * If you have not already installed VirtualBox, then you'll need to visit the [Creating a lab](#lab-creation) portion of this repo and install [Oracle VirtualBox](#lab-creation) for Windows or OSX, Linux, or Solaris.
+![Oralce VirtualBox Manaer](https://docs.oracle.com/en/virtualization/virtualbox/6.0/user/images/virtualbox-main-empty.png)
 
- * #### Adding the GUI <a name="gui"></a>
+* #### Installing from DVD <a name="install-dvd"></a>
 
- * #### Add Guest Additions <a name="guest-additions"></a>
+* #### Installing from the Networking <a name="install-network"></a>
+
+* #### Adding the GUI <a name="gui"></a>
+
+* #### Add Guest Additions <a name="guest-additions"></a>
 
 * ### Help and Archiving <a name="help"></a>
 
