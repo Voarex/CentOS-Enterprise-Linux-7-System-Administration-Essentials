@@ -1,6 +1,8 @@
 # CentOS Enterprise Linux 7 - System Administration Essentials
 
-Inside this repository will be a tutorial on how to go from zero to hero on the essentials of CentOS Enterprise Linux 7 System Administration.
+Inside this repository will be a tutorial on how to go from zero to hero on the essentials of CentOS Enterprise Linux 7 System Administration.  
+
+ * *Sources: [PluralSight - LFCS](https://www.pluralsight.com/paths/linux-foundation-certified-system-admin); [Learn Linux - #whoami](https://linux.security10x.com/)*
 
 ## Table of Contents
 1. [Prerequisites](#prereq)
@@ -182,7 +184,8 @@ crw--w----. 1 cellis tty 136, 0 Oct  1 04:46 /dev/pts/0
 
 * ##### Oracle VirtualBox <a name="oracle"></a>
 
- [Oracle VirtualBox][software] is an [open source software][open-source] that allows you to create a virtual machine.
+ [Oracle VirtualBox][software] is an [open source software][open-source] that allows you to create a virtual machine.  
+ If you have finished installing and need to return to setting up your [VirtualBox Network, click here](#virtualbox-network).
 ![VirtualBox](https://miro.medium.com/max/600/1*BXQXYg3Y-_2ougVn0bmumQ.png)
 
 * ##### VMWare Fusion <a name="vmware"></a>
@@ -191,10 +194,11 @@ crw--w----. 1 cellis tty 136, 0 Oct  1 04:46 /dev/pts/0
   ![VmWareFusion](https://upload.wikimedia.org/wikipedia/commons/8/8e/VMware_Fusion_Logo.png)
 
  [software]: https://www.virtualbox.org/wiki/Downloads
+ [fusion]: https://www.vmware.com/products/fusion/fusion-evaluation.html
  [open-source]: https://en.wikipedia.org/wiki/Open-source_software
  [proprietary]: https://en.wikipedia.org/wiki/Proprietary_software
  [closed-source]: https://en.wikipedia.org/wiki/Proprietary_software
- [fusion]: https://www.vmware.com/products/fusion/fusion-evaluation.html
+
 
   * ##### KVM
 
@@ -254,8 +258,13 @@ crw--w----. 1 cellis tty 136, 0 Oct  1 04:46 /dev/pts/0
 
 * #### VirtualBox Networking <a name="virtualbox-network"></a>
 
- * If you have not already installed VirtualBox, then you'll need to visit the [Creating a lab](#lab-creation) portion of this repo and install [Oracle VirtualBox](#lab-creation) for Windows or OSX, Linux, or Solaris.
-![Oralce VirtualBox Manaer](https://docs.oracle.com/en/virtualization/virtualbox/6.0/user/images/virtualbox-main-empty.png)
+ * If you have not already installed [VirtualBox](#lab-creation), then you'll need to visit the [Creating a lab](#lab-creation) portion of this repo and install [Oracle VirtualBox](#lab-creation) for Windows, OSX, Linux, or Solaris.
+ * Go ahead and click the blue button that says "New".
+ ![Oralce VirtualBox Manager](https://docs.oracle.com/en/virtualization/virtualbox/6.0/user/images/virtualbox-main-empty.png)
+
+ * You will now be prompted with naming your new virtual machine and choosing an operating system. I recommend just choosing the name CentOS-7 and it automatically picks the operating system type as Linux and the version is Red Hat (64-bit). Then hit next, and continue with the default options, unless you specifically know what you are changing.
+ ![Oracle VirtualBox Manager](https://javapointers.com/wp-content/uploads/2020/04/new-vbox-centos.png)
+ ![Orance VirtualBox Manaer]()
 
 * #### Installing from DVD <a name="install-dvd"></a>
 
