@@ -1,8 +1,7 @@
 # CentOS Enterprise Linux 7 - System Administration Essentials
 
-Inside this repository will be a tutorial on how to go from zero to hero on the essentials of CentOS Enterprise Linux 7 System Administration.  
+ * Inside this repository will be a tutorial on how to go from zero to hero on the essentials of CentOS Enterprise Linux 7 System Administration.
 
- * *Sources: [PluralSight - LFCS](https://www.pluralsight.com/paths/linux-foundation-certified-system-admin); [Learn Linux - #whoami](https://linux.security10x.com/)*
 
 ## Table of Contents
 1. [Prerequisites](#prereq)
@@ -43,15 +42,12 @@ Inside this repository will be a tutorial on how to go from zero to hero on the 
     * Markdown is an essential text editor and there are different flavors of Markdown depending on what you're using. For example, using shell commands on Github are called console commands.
 
     * Below you can see a Markdown preview.
-     ![Markdown](https://res.cloudinary.com/practicaldev/image/fetch/s--CRJTTGM8--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/i/g595slgphyi9lkqz2u18.png)
+    ![Markdown](https://media.giphy.com/media/NKPuru8WWScVQSo2CH/giphy.gif)
 
 
 ## Demo some basic tools <a name="demo-tools"></a>
 
- * In this demonstration you will need to have an open lab, and some basic knowledge of system administration. If you do not have a lab created, that's okay just continue to [Creating a lab](#lab-creation) portion of this repository. You can then continue on with the demo after if you'd like, or you can just jump right into the rest of the repo.
-
- * I will begin by showing some simple commands that you can use as well as some different types of *languages*.
-
+ * In this demonstration you will need to have an open lab, and some basic knowledge of system administration. If you do not have a lab created, that's okay just continue to [Creating a lab](#lab-creation) portion of this repository. You can then continue on with the demo after if you'd like, or you can just jump right into the rest of the repo. I will begin by showing some simple commands that you can use as well as some different types of *languages*.
 
  1. By entering ```cat /etc/system-release``` on the CLI, you will see we are using CentOS Linux 7.9.2009. (Core) on the current system. The command ```cat``` is to display a file's contents.  
 You can see below that there is only one line after the command entered.
@@ -178,7 +174,7 @@ crw--w----. 1 cellis tty 136, 0 Oct  1 04:46 /dev/pts/0
 
    * This is where we will use your host pc to connect to your virtual machine. Usually this consists of a few machines; Host System Using VirtualBox , the CentOS 7 master server, CentOS 7 GUI server1 server, and CentOS 7 CLI server2 server. The command line(CLI) will be more useful for you than the graphical user interface(GUI) since we will be using enterprise systems. That means those systems consist mainly of remote connections via the CLI.  The master system will really be of less use to you since you probably do not have a local web server setup and that requires an installation of CentOS 7 for the web server or ftp server. You can also mimic the same remote installs from a web server by looking at CentOS distributions that are available to download via mirror servers.
    * Lab Environment Example using a hypervisor called [Oracle VirtualBox](#oracle).
-![Lab Environment](https://gblobscdn.gitbook.com/assets%2F-MJHPOTKFzF1tYpLSY49%2F-MYwo1xluj6lQk1NKhG8%2F-MYwoEBYEBvtzpq-y4Cy%2Fimage.png?alt=media&token=6d37be49-16fe-41e0-b736-fc7bd92b599e)
+![Lab Environment](https://media.giphy.com/media/HdDIoY52LALZDGo2ey/giphy.gif)
 
     ### Virtual Machine Hypervisors: <a name="vmhypervisor"></a>
 
@@ -186,12 +182,12 @@ crw--w----. 1 cellis tty 136, 0 Oct  1 04:46 /dev/pts/0
 
  [Oracle VirtualBox][software] is an [open source software][open-source] that allows you to create a virtual machine.  
  If you have finished installing and need to return to setting up your [VirtualBox Network, click here](#virtualbox-network).
-![VirtualBox](https://miro.medium.com/max/600/1*BXQXYg3Y-_2ougVn0bmumQ.png)
+![VirtualBox](https://media.giphy.com/media/jiLy1vKv0zUb7cJPs1/giphy.gif)
 
 * ##### VMWare Fusion <a name="vmware"></a>
 
   You may also use [VMware Fusion][fusion]. This is an Enterprise [closed source software][closed-source] also known as [proprietary software][proprietary].
-  ![VmWareFusion](https://upload.wikimedia.org/wikipedia/commons/8/8e/VMware_Fusion_Logo.png)
+  ![VmWareFusion](https://media.giphy.com/media/1uTyPuFHZB36juP4Xt/giphy.gif)
 
  [software]: https://www.virtualbox.org/wiki/Downloads
  [fusion]: https://www.vmware.com/products/fusion/fusion-evaluation.html
@@ -216,7 +212,7 @@ crw--w----. 1 cellis tty 136, 0 Oct  1 04:46 /dev/pts/0
 
   * ##### Citrix XenServer
 
-  * ^ All hypervisors coming soon...
+  * ^ All hypervisor information coming soon...
 
 ## Learning the Essentials of CentOS Enterprise Linux 7 Administration <a name="essentials"></a>
 
@@ -228,20 +224,14 @@ crw--w----. 1 cellis tty 136, 0 Oct  1 04:46 /dev/pts/0
   Installing CentOS 7 from local media  
   Installing CentOS 7 from the network  
    - Local Web server  
-   - [www.CentOS.org](https://CentOS.org/download/) - then choosing Linux 7 (2009)> x86_64 > Here will be a list of mirrors
-   - http://mirrors.vcea.wsu.edu/centos/7.9.2009/isos/x86_64/ - this is a mirror example  
+   - [www.CentOS.org](https://CentOS.org)
+   - http://mirrors.vcea.wsu.edu/centos/7.9.2009/isos/x86_64/ - ISO Mirror example  
 
-   Both installs will be minimal installs  
+   Both of our ISO installs will be minimal installs  
    Adding X Server GUI to Server 1  
    Install VirtualBox Guest Additions
 
-  * You may find that there are things that you may not know that may not be mentioned here. That's okay because every hurdle is just a learning experience. I will have more courses to help you better understand CentOS Enterprise Linux 7, this course is just the Essential crash course.
-
-  * If you go to [www.CentOS.org/](https://www.centOS.org) you will be able to filter through multiple types of downloads for CentOS Linux 7 x86_64 which are as follows:  
-   1. Everything DVD - All that CentOS can provide 7GB+  
-   1. DVD - 4 GB Full Installation DVD  
-   1. Minimal - A CD size install around 600MB, enough for a Minimal install of CentOS.  
-   1. NetInstall - If you look through the website you can find alternative downloads hidden, such as NetInstall which is about 10MB for a pure NetInstall i386.
+  * You may find that there are things that you may *not* know that may or may not be mentioned here. That's okay because every hurdle is just a learning experience. I will have more courses to help you better understand CentOS ENTerprise Linux 7, this course is just the Essential crash course.
 
 
 * #### Downloading CentOS <a name="download-centos"></a>
@@ -249,12 +239,21 @@ crw--w----. 1 cellis tty 136, 0 Oct  1 04:46 /dev/pts/0
  * During our download of CentOS Linux 7, we will be able to install different types of CentOS as previously mentioned during the overview. We will be using a minimal install for both of our servers because you can always scale up.
 
 
-* If you go to [www.CentOS.org](https://www.centOS.org) you will be given choices with tabs at the top and the two buttons under The CentOS Project. We will choose the [CentOS Linux](https://centos.org/centos-linux/) button or click the [Download](https://centos.org/download/) tab.
-![CentOS.org](https://blog.centos.org/wp-content/uploads/2020/07/Screenshot_20200730_111126.png)
+* If you go to [www.CentOS.org](https://www.centOS.org) you will be given choices with tabs at the top and the two buttons under The CentOS Project. We will choose the [CentOS Linux](https://centos.org/centos-linux/) button or click the [Download](https://centos.org/download/) tab.  
+![CentOS.org](https://media.giphy.com/media/VmBRZik5Kxw3we4zLa/giphy.gif)
 
- * Once you've chosen CentOS Linux 7 you will be given a bunch of options. If you need to install a NetInstall of CentOS Linux 7 or if you want to see the [alternative downloads](https://wiki.centos.org/Download) or just a list of all the installs this will route you to www.wiki.centos.org/Download. There you can find all the types of installs mentioned prior.
-![CentOS Option](https://imgs.developpaper.com/imgs/3204112588-5efd555297297_articlex.png)
+ * Once you've chosen CentOS Linux, you will be shown a few options.  
+ You will need to select the tab 7 (2009) and choose x86_64.   
+ ![CentOS Linux 7](https://media.giphy.com/media/sE7tAOEVmTJXe2pqXa/giphy.gif)  
+ * Once the x86_64 hyperlink has been chosen you will be presented with a list of mirrors to download your ISO that is available in your region.  
+ ![CentOS x86_64](https://media.giphy.com/media/FdZPEYRFQflCdLl2tE/giphy.gif)
 
+ * Once you click the mirror hyperlink you will be shown ISO files to choose from. We will be choosing CentOS-7-x86_64-Minimal-2009.iso download. The ISO list is as follows:  
+ Everything DVD - All that CentOS can provide in 7GB+ download   
+ DVD - 4GB Full Installation DVD  
+ Minimal - A CD size install around 600MB, enough for a Minimal install of CentOS.  
+ NetInstall - If you look through this link you can find AltArch Releases. Which will show a list ofsuch as NetInstall which is about 10MB for a pure NetInstall.
+ ![Index of CentOS](https://media.giphy.com/media/218VGNfKFdxP7tsaYJ/giphy.gif)
 
 * #### VirtualBox Networking <a name="virtualbox-network"></a>
 
@@ -264,6 +263,9 @@ crw--w----. 1 cellis tty 136, 0 Oct  1 04:46 /dev/pts/0
 
  * You will now be prompted with naming your new virtual machine and choosing an operating system. I recommend just choosing the name CentOS-7 and it automatically picks the operating system type as Linux and the version is Red Hat (64-bit). Then hit next, and continue with the default options, unless you specifically know what you are changing.
  ![Oracle VirtualBox Manager](https://javapointers.com/wp-content/uploads/2020/04/new-vbox-centos.png)
+
+<iframe src="https://giphy.com/embed/8VkgrPdxMh0oo" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/graphic-web-premium-8VkgrPdxMh0oo">via GIPHY</a></p>
+
  ![Orance VirtualBox Manaer]()
 
 * #### Installing from DVD <a name="install-dvd"></a>
