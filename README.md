@@ -18,11 +18,10 @@
    1. [Installing CentOS Linux 7](#install-centos)
       1. [Downloading CentOS](#download-centos)
       2. [VirtualBox Networking](#virtualbox-network)
-      3. [VirtualBox Server](#virtualbox-server)
-      4. [Installing from DVD](#install-dvd)
-      5. [Installing from Network](#install-network)
-      6. [Adding the GUI](#gui)
-      7. [Add Guest Additions](#guest-additions)
+      3. [Installing from Media](#install-media)
+      4. [Installing from Network](#install-network)
+      5. [Adding the GUI](#gui)
+      6. [Add Guest Additions](#guest-additions)
    1. [Help and Archiving](#help)
    1. [Working on CLI/Reading Files](#cli-read-files)
    1. [Permission and Root Access](#permissions)
@@ -32,7 +31,6 @@
           1.  [Putty](#putty)
           2.  [Windows 10 default command prompt](#cmd)
           3.  [Linux SSH](#redhat-ssh)
-
 
 ## Prerequisites <a name="prereq"></a>
 
@@ -62,7 +60,7 @@ CentOS Linux release 7.9.2009 (Core)
   * CLI using the Python language, which is Linux's default language.
 ```python
 [(username)@master ~]$ cat /etc/system-release
-CentOS Linux release 7.9.2009 (Core)
+CentOS Linux release 7.9 (Core)
 ```
 
   * There are other languages, but that's not what this crash course is for.
@@ -212,10 +210,11 @@ crw--w----. 1 cellis tty 136, 0 Oct  1 04:46 /dev/pts/0
 
 ## Learning the Essentials of CentOS Enterprise Linux 7 Administration <a name="essentials"></a>
 
-* ### Installing Centos Enterprise Linux 7 Overview <a name="install-centos"></a> <a name="overview"></a>
+* ### Installing CentOS Enterprise Linux 7 Overview <a name="install-centos"></a> <a name="overview"></a>
 
   * As we make our way through this portion of the repository you will be doing the following:  
   Downloading ISO files  
+  VirtualBox Server creation
   VirtualBox Networking  
   Installing CentOS 7 from local media  
   Installing CentOS 7 from the network  
@@ -227,59 +226,65 @@ crw--w----. 1 cellis tty 136, 0 Oct  1 04:46 /dev/pts/0
    Adding X Server GUI to Server 1  
    Install VirtualBox Guest Additions
 
-  * You may find that there are things that you may *not* know that may or may not be mentioned here. That's okay because every hurdle is just a learning experience. I will have more courses to help you better understand CentOS ENTerprise Linux 7, this course is just the Essential crash course.
+  * *You may find that there are things that you may not know that may or may not be mentioned here. That's okay because every hurdle is just a learning experience. I will have more courses to help you better understand CentOS Enterprise Linux 7, this course is just the Essential crash course.*
 
 
 * #### Downloading CentOS <a name="download-centos"></a>
 
- * During our download of CentOS Linux 7, we will be able to install different types of CentOS as previously mentioned during the overview. We will be using a minimal install for both of our servers because you can always scale up.
+ * During our download of CentOS Linux 7, we will be able to install different types of CentOS as previously mentioned during the overview. We will be using a "Minimal" install for both of our servers because you can always scale up at a later date.
 
-
-* If you go to [www.CentOS.org](https://www.centOS.org) you will be given choices with tabs at the top and the two buttons under The CentOS Project. We will choose the [CentOS Linux](https://centos.org/centos-linux/) button or click the [Download](https://centos.org/download/) tab.  
+ * If you go to [www.CentOS.org](https://www.centOS.org) you will be given choices with tabs at the top and the two buttons under [The CentOS Project](www.centos.org). We will choose the [CentOS Linux](https://centos.org/centos-linux/) button or click the [Download](https://centos.org/download/) tab at the top.  
 ![CentOS.org](https://media.giphy.com/media/VmBRZik5Kxw3we4zLa/giphy.gif)
 
  * Once you've chosen CentOS Linux, you will be shown a few options.  
  You will need to select the tab 7 (2009) and choose x86_64.   
  ![CentOS Linux 7](https://media.giphy.com/media/sE7tAOEVmTJXe2pqXa/giphy.gif)  
- * Once the x86_64 hyperlink has been chosen you will be presented with a list of mirrors to download your ISO that is available in your region.  
+ * Once the __x86_64__ hyperlink has been chosen you will be presented with a list of mirrors to download your ISO that is available in your region.  
  ![CentOS x86_64](https://media.giphy.com/media/FdZPEYRFQflCdLl2tE/giphy.gif)
 
- * Once you click the mirror hyperlink you will be shown ISO files to choose from. We will be choosing CentOS-7-x86_64-Minimal-2009.iso download. The ISO list is as follows:  
+ * Once you click the mirror hyperlink you will be shown ISO files to choose from. We will be choosing __CentOS-7-x86_64-Minimal-2009.iso__ download. The ISO list is as follows:  
  Everything DVD - All that CentOS can provide in 7GB+ download   
  DVD - 4GB Full Installation DVD  
  Minimal - A CD size install around 600MB, enough for a Minimal install of CentOS.  
- NetInstall - If you look through this link you can find AltArch Releases. Which is about ~10MB for a pure NetInstall.  
+ NetInstall - A download about ~10MB for a pure NetInstall.  
  ![Index of CentOS](https://media.giphy.com/media/218VGNfKFdxP7tsaYJ/giphy.gif)
-
-* #### VirtualBox Server Creation <a name="virtualbox-server"></a>
-
- * Go ahead and click the blue button that says "New".  
- ![Oracle VirtualBox Manager](https://media.giphy.com/media/zTuHcSCCtACGhmfT2n/giphy.gif)
-
- * You will now be prompted with naming your new virtual machine and choosing an operating system. I recommend just choosing the name "CentOS" and it automatically picks the operating system type as Linux and the version as Red Hat (64-bit), then you can just choose a different name before continuing and it keeps the OS. You may also just name the server and choose from the drop down list. Then hit next, and continue with the default options as shown below, unless you specifically know what you are changing.
- ![Oracle VirtualBox Manager](https://media.giphy.com/media/yr7TsUTcbV01vGuj1l/giphy.gif)
-   - Default options for setting up your VirtualBox Server are as follows:  
-   ![]()
-   ![]()
-   ![]()
-
-
-
 
 * #### VirtualBox Networking <a name="virtualbox-network"></a>
 
  * If you have not already installed [VirtualBox](#lab-creation), then you'll need to visit the [Creating a lab](#lab-creation) portion of this repo and install [Oracle VirtualBox](#lab-creation) for Windows, OSX, Linux, or Solaris.
 
- * Now that you have downloaded [Oracle VirtualBox](#lab-creation) you will be setting up your Nat Network and Host-only Adapter. Since you will not have a starting server, you will need to configure your Network information or you can also do this after creating your server. It can be tricky either way so pay attention!  
- Follow the instructions below to configure your NatNetwork.  
-   - Click Preferences.  
+ * Now that you have downloaded [Oracle VirtualBox](#lab-creation) you will be setting up your NatNetwork settings. If you did not create a server don't worry you weren't supposed to. You will need to configure your network settings first. You technically can setup Network settings before or after, but it can be tricky either way, so pay attention!
+
+ * Follow the instructions below to configure your NatNetwork.  
+
+   - Click on Tools and click Preferences, you may also click File and preferences. Also, Ctrl + G or Left Command + G.  
    ![VirtualBox Preferences](https://media.giphy.com/media/0abmjDJ1ZMhH3v4OQq/giphy.gif)
    - Click Networking.  
    ![VirtualBox Network](https://media.giphy.com/media/xemmReUK5GEh0kaK6r/giphy.gif)
    - Click the add new NAT network button and click Ok to continue with your new NatNetwork.  
    ![VirtualBox NAT Network](https://media.giphy.com/media/cWL4c9vsqvnmBxzxfJ/giphy.gif)
 
-* #### Installing from DVD <a name="install-dvd"></a>
+* #### Installing from Media <a name="install-media"></a>
+
+ * Go ahead and click the blue button that says "New".  
+ ![Oracle VirtualBox Manager](https://media.giphy.com/media/zTuHcSCCtACGhmfT2n/giphy.gif)
+
+ * You will now be prompted with naming your new virtual machine and choosing an operating system. I recommend just choosing the name "CentOS" and it automatically picks the operating system type as Linux and the version as Red Hat (64-bit). You can then just choose a different name like "server1" before continuing and it keeps the same OS as before. You may also just name the server and choose from the drop down list. Hit next, and continue with the default options as shown below, unless you specifically know what you are changing.  
+ ![Oracle VirtualBox Manager](https://media.giphy.com/media/yr7TsUTcbV01vGuj1l/giphy.gif)
+   - Default options for setting up your VirtualBox Server are as follows:  
+     1. Choosing your memory size. Stick to defaults.
+   ![Oracle VirtualBox Storage](https://media.giphy.com/media/7AoRg5UqXkLWmDBoog/giphy.gif)
+     2. Creating your Virtual Machine Hard disk. Stick to defaults.
+   ![Oracle VirtualBox Hard Disk](https://media.giphy.com/media/SCqWxn6AGo2CaXOtJr/giphy.gif)
+     3. Choosing your Hard Disk file type. Stick to defaults.
+   ![Oracle VirtualBox Hard Disk Type](https://media.giphy.com/media/17s5qiFhCrYwU9bPPL/giphy.gif)
+     4. Choosing your storage on the Hard Disk. Stick to defaults.
+   ![Oracle VirtualBox Hard Disk Storage](https://media.giphy.com/media/k0yzBmjwkHUfJgiWmN/giphy.gif)
+     5. Choosing your file location and size. Stick to defaults.
+   ![Oracle VirtualBox File Location/Size](https://media.giphy.com/media/LPOiUFEzd0GX8GzkcL/giphy.gif)
+
+  *  Server Storage steps are as follows:
+     1. Left click on the server1
 
 * #### Installing from the Networking <a name="install-network"></a>
 
