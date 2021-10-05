@@ -36,9 +36,10 @@ Inside this repository will be a tutorial on how to go from zero to hero on the 
 ## Prerequisites <a name="prereq"></a>
 
 1. *Having a basic understanding of __[System Administration](https://victorops.com/blog/definitive-guide-for-being-a-system-administrator)__ is recommended for this repository and for the Demo, otherwise [Google](www.google.com) is your best friend.* <a name="prereq"></a>
-2. *Having a basic understanding of __[Markdown](www.markdowntutorial.com)__ is not required to your abilities on taking this course. It will be essential to you for taking notes professionally and staying organized. This will also help you learn how to use [Markdown](www.markdowntutorial.com) by repeatedly writing it.*  
+2. *Having a basic understanding of __[Markdown](www.markdowntutorial.com)__ is not required to your abilities on taking this course. It will be essential for you to take notes professionally and staying organized. This will also help you learn how to use [Markdown](www.markdowntutorial.com) by repeatedly writing it by preparing you for an Enterprise level experience. Use Markdown tutorials online, it is quite easy to use.* <a name="md"></a>
 
    * Markdown is an essential text editor and there are different flavors of Markdown depending on what platform you're using. For example, using shell commands on Github are called console commands.
+
    * Below you can see a Markdown preview of this repository. I use [Atom](www.atom.io) text editor.
    ![Markdown](https://media.giphy.com/media/NKPuru8WWScVQSo2CH/giphy.gif)
 
@@ -159,52 +160,50 @@ Which happens to be ```/etc/system-release```.
    crw--w----. 1 cellis tty 136, 0 Oct  1 04:46 /dev/pts/0
    ```
 
- ### Demo Summary <a name="demo-recap"></a>
+ ### Demo Recap <a name="demo-recap"></a>
 
-1. We were able to see how we use a lab environment inside a hypervisor. We will be using VirtualBox as our virtual machine and installing CentOS Linux.
-
-2. As you can see you will learn with demonstrations by following along with a summary at the end of each category to touch up the subject.
+We just demonstrated using a lab environment inside a hypervisor. We will be using VirtualBox as our virtual machine hypervisor and installing CentOS Linux 7. You will learn this content through demonstrations by following along and taking notes by using [Markdown](#pre-req). There will be a summary at the end of each major category to touch up the subject's contents.
 
 ## Creating a lab <a name="lab-creation"></a>
 
-1. You will need to create a lab using a hypervisor and the most likely scenario is a free or open source software, but you can also use a closed source software if you're willing to pay for more stable features but deal with the certain support resolution restrictions.
+You will need to create a lab using a [Hypervisor](#vmhypevisor) and the most likely scenario is a free or open source software, but you can also use a closed source software if you're willing to pay for more stable features but deal with the certain support resolution restrictions.
 
-   * This is where we will use your host pc to connect to your virtual machine. Usually this consists of a few machines; Host System Using VirtualBox , the CentOS 7 master server, CentOS 7 GUI server1 server, and CentOS 7 CLI server2 server. The command line(CLI) will be more useful for you than the graphical user interface(GUI) since we will be using enterprise systems. That means those systems consist mainly of remote connections via the CLI.  The master system will really be of less use to you since you probably do not have a local web server setup and that requires an installation of CentOS 7 for the web server or ftp server. You can also mimic the same remote installs from a web server by looking at CentOS distributions that are available to download via mirror servers.
-   * Lab Environment Example. We are using a Host System with a hypervisor called [Oracle VirtualBox](#oracle).
-![Lab Environment](https://media.giphy.com/media/HdDIoY52LALZDGo2ey/giphy.gif)
+ * This is where we will use your host machine to connect to your virtual machine. Usually this consists of the following machines; Host machine that's using VirtualBox , the CentOS 7 master server, CentOS 7 GUI server1, and CentOS 7 CLI server2. The command line(CLI) server will be more useful to you than the graphical user interface(GUI) serve, because we will be using enterprise systems. Enterprise systems mainly consist of remote connections via the CLI.  
 
-    ### Virtual Machine Hypervisors: <a name="vmhypervisor"></a>
+ * The master system will really be of less use to you since you probably do not have a local web server setup and that requires an installation of CentOS 7 for the web server or ftp server. You can also mimic the same remote installs from a web server by looking at CentOS distributions that are available to download via mirror servers.
 
-    * ##### Oracle VirtualBox <a name="oracle"></a>
+   * Lab Environment Example. We are using our host machine that's uses a Virtual Machine [Hypervisor](#vmhypervisor) called [Oracle VirtualBox.](#oracle)  
+   ![Lab Environment](https://media.giphy.com/media/HdDIoY52LALZDGo2ey/giphy.gif)
 
-      [Oracle VirtualBox][software] is an free [open source software][open-source] that allows you to create a virtual machine. Free as in free to use. Free as in freedom, because it is open source so it isn't restricted.  
-      If you have finished installing and need to return to setting up your [VirtualBox Network, click here](#virtualbox-network).  
+ ### Virtual Machine Hypervisors <a name="vmhypervisor"></a>
 
-      ![VirtualBox](https://media.giphy.com/media/jiLy1vKv0zUb7cJPs1/giphy.gif)
+ A Virtual Machine Hypervisor is a software, firmware, or type of hardware that allows you to run or manage virtual machines. A computer in which runs one or more virtual machines is called a host machine and every virtual machine is a guest machine.
 
-    * ##### VMWare Fusion <a name="vmware"></a>
+ * ##### Oracle VirtualBox <a name="oracle"></a>
+ [Oracle VirtualBox][software] is a free [open source software][open-source] that allows you to create virtual machines. Free as in free to use and free as in freedom, because it is open source. If you have finished installing and need to return to setting up your [VirtualBox Network, click here.](#virtualbox-network)  
+![VirtualBox](https://media.giphy.com/media/jiLy1vKv0zUb7cJPs1/giphy.gif)
 
-      You may also use [VMware Fusion][fusion]. This is an Enterprise [closed source software][closed-source] also known as [proprietary software][proprietary].  
+ * ##### VMWare Fusion <a name="vmware"></a>
+ You may also use [VMware Fusion][fusion]. This is an Enterprise [closed source software][closed-source] also known as [proprietary software.][proprietary]  
+ ![VmWareFusion](https://media.giphy.com/media/1uTyPuFHZB36juP4Xt/giphy.gif)
 
-      ![VmWareFusion](https://media.giphy.com/media/1uTyPuFHZB36juP4Xt/giphy.gif)
+ * ##### KVM
 
-    * ##### KVM
+ * ##### Red Had Hypervisor on KVM
 
-    * ##### Red Had Hypervisor on KVM
+ * ##### LXC
 
-    * ##### LXC
+ * ##### LXD
 
-    * ##### LXD
+ * ##### Docker
 
-    * ##### Docker
+ * ##### Kubernetes
 
-    * ##### Kubernetes
+ * ##### Proxmox
 
-    * ##### Proxmox
+ * ##### Citrix XenServer
 
-    * ##### Citrix XenServer
-
-    * ^ All hypervisor information coming soon...
+ * ^ All hypervisor information coming soon...
 
 ## Learning the Essentials of CentOS Enterprise Linux 7 Administration <a name="essentials"></a>
 
@@ -315,8 +314,6 @@ Which happens to be ```/etc/system-release```.
   * ##### Windows 10 default command promp <a name="cmd"></a>
 
   * ##### Linux SSH <a name="redhat-ssh"></a>
-
-## Markdown <a name="md"></a>
 
 
 [software]: https://www.virtualbox.org/wiki/Downloads
