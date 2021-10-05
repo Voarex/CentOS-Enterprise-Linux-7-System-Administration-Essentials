@@ -12,16 +12,17 @@
 3. [Creating a lab](#lab-creation)
    1. [Virtual Machine Hypervisors](#vmhypervisor)
       1. [Oracle VirtualBox](#oracle)
-      1. [VMware Fusion](#vmware)
+      2. [VMware Fusion](#vmware)
 4. [Learning the Essentials of CentOS Enterprise Linux 7 Administration](#essentials)
    1. [Course Overview](#overview)
    1. [Installing CentOS Linux 7](#install-centos)
       1. [Downloading CentOS](#download-centos)
-      1. [VirtualBox Network](#virtualbox-network)
-      2. [Installing from DVD](#install-dvd)
-      3. [Installing from Network](#install-network)
-      4. [Adding the GUI](#gui)
-      5. [Add Guest Additions](#guest-additions)
+      2. [VirtualBox Networking](#virtualbox-network)
+      3. [VirtualBox Server](#virtualbox-server)
+      4. [Installing from DVD](#install-dvd)
+      5. [Installing from Network](#install-network)
+      6. [Adding the GUI](#gui)
+      7. [Add Guest Additions](#guest-additions)
    1. [Help and Archiving](#help)
    1. [Working on CLI/Reading Files](#cli-read-files)
    1. [Permission and Root Access](#permissions)
@@ -35,13 +36,13 @@
 
 ## Prerequisites <a name="prereq"></a>
 
- 1. *Having a basic understanding of **[System Administration](https://victorops.com/blog/definitive-guide-for-being-a-system-administrator)** is recommended for this repository and for the Demo, otherwise [Google](www.google.com) is your best friend.* <a name="prereq"></a>
+ 1. *Having a basic understanding of __[System Administration](https://victorops.com/blog/definitive-guide-for-being-a-system-administrator)__ is recommended for this repository and for the Demo, otherwise [Google](www.google.com) is your best friend.* <a name="prereq"></a>
 
- 2. *Having a basic understanding of **[Markdown](www.markdowntutorial.com)** will not be essential to your abilities on taking this course. It will be essential to you for taking notes professionally and staying organized. This will also help you learn how to use [Markdown](www.markdowntutorial.com) by repeatedly writing it.  
- (7-22 Repetitions truly help your brain to learn something.)* <a name="md"></a>
-    * Markdown is an essential text editor and there are different flavors of Markdown depending on what you're using. For example, using shell commands on Github are called console commands.
+ 2. *Having a basic understanding of __[Markdown](www.markdowntutorial.com)__ is not required to your abilities on taking this course. It will be essential to you for taking notes professionally and staying organized. This will also help you learn how to use [Markdown](www.markdowntutorial.com) by repeatedly writing it.*  
 
-    * Below you can see a Markdown preview.
+   * Markdown is an essential text editor and there are different flavors of Markdown depending on what platform you're using. For example, using shell commands on Github are called console commands.
+
+   * Below you can see a Markdown preview of this repository. I use [Atom]()
     ![Markdown](https://media.giphy.com/media/NKPuru8WWScVQSo2CH/giphy.gif)
 
 
@@ -173,46 +174,41 @@ crw--w----. 1 cellis tty 136, 0 Oct  1 04:46 /dev/pts/0
 1. You will need to create a lab using a hypervisor and the most likely scenario is a free or open source software, but you can also use a closed source software if you're willing to pay for more stable features but deal with the certain support resolution restrictions.
 
    * This is where we will use your host pc to connect to your virtual machine. Usually this consists of a few machines; Host System Using VirtualBox , the CentOS 7 master server, CentOS 7 GUI server1 server, and CentOS 7 CLI server2 server. The command line(CLI) will be more useful for you than the graphical user interface(GUI) since we will be using enterprise systems. That means those systems consist mainly of remote connections via the CLI.  The master system will really be of less use to you since you probably do not have a local web server setup and that requires an installation of CentOS 7 for the web server or ftp server. You can also mimic the same remote installs from a web server by looking at CentOS distributions that are available to download via mirror servers.
-   * Lab Environment Example using a hypervisor called [Oracle VirtualBox](#oracle).
+   * Lab Environment Example. We are using a Host System with a hypervisor called [Oracle VirtualBox](#oracle).
 ![Lab Environment](https://media.giphy.com/media/HdDIoY52LALZDGo2ey/giphy.gif)
 
     ### Virtual Machine Hypervisors: <a name="vmhypervisor"></a>
 
-* ##### Oracle VirtualBox <a name="oracle"></a>
+    * ##### Oracle VirtualBox <a name="oracle"></a>
 
- [Oracle VirtualBox][software] is an [open source software][open-source] that allows you to create a virtual machine.  
- If you have finished installing and need to return to setting up your [VirtualBox Network, click here](#virtualbox-network).
-![VirtualBox](https://media.giphy.com/media/jiLy1vKv0zUb7cJPs1/giphy.gif)
+      [Oracle VirtualBox][software] is an free [open source software][open-source] that allows you to create a virtual machine. Free as in free to use. Free as in freedom, because it is open source so it isn't restricted.  
+      If you have finished installing and need to return to setting up your [VirtualBox Network, click here](#virtualbox-network).  
 
-* ##### VMWare Fusion <a name="vmware"></a>
+      ![VirtualBox](https://media.giphy.com/media/jiLy1vKv0zUb7cJPs1/giphy.gif)
 
-  You may also use [VMware Fusion][fusion]. This is an Enterprise [closed source software][closed-source] also known as [proprietary software][proprietary].
-  ![VmWareFusion](https://media.giphy.com/media/1uTyPuFHZB36juP4Xt/giphy.gif)
+    * ##### VMWare Fusion <a name="vmware"></a>
 
- [software]: https://www.virtualbox.org/wiki/Downloads
- [fusion]: https://www.vmware.com/products/fusion/fusion-evaluation.html
- [open-source]: https://en.wikipedia.org/wiki/Open-source_software
- [proprietary]: https://en.wikipedia.org/wiki/Proprietary_software
- [closed-source]: https://en.wikipedia.org/wiki/Proprietary_software
+      You may also use [VMware Fusion][fusion]. This is an Enterprise [closed source software][closed-source] also known as [proprietary software][proprietary].  
 
+      ![VmWareFusion](https://media.giphy.com/media/1uTyPuFHZB36juP4Xt/giphy.gif)
 
-  * ##### KVM
+    * ##### KVM
 
-  * ##### Red Had Hypervisor on KVM
+    * ##### Red Had Hypervisor on KVM
 
-  * ##### LXC
+    * ##### LXC
 
-  * ##### LXD
+    * ##### LXD
 
-  * ##### Docker
+    * ##### Docker
 
-  * ##### Kubernetes
+    * ##### Kubernetes
 
-  * ##### Proxmox
+    * ##### Proxmox
 
-  * ##### Citrix XenServer
+    * ##### Citrix XenServer
 
-  * ^ All hypervisor information coming soon...
+    * ^ All hypervisor information coming soon...
 
 ## Learning the Essentials of CentOS Enterprise Linux 7 Administration <a name="essentials"></a>
 
@@ -252,21 +248,36 @@ crw--w----. 1 cellis tty 136, 0 Oct  1 04:46 /dev/pts/0
  Everything DVD - All that CentOS can provide in 7GB+ download   
  DVD - 4GB Full Installation DVD  
  Minimal - A CD size install around 600MB, enough for a Minimal install of CentOS.  
- NetInstall - If you look through this link you can find AltArch Releases. Which will show a list ofsuch as NetInstall which is about 10MB for a pure NetInstall.
+ NetInstall - If you look through this link you can find AltArch Releases. Which is about ~10MB for a pure NetInstall.  
  ![Index of CentOS](https://media.giphy.com/media/218VGNfKFdxP7tsaYJ/giphy.gif)
+
+* #### VirtualBox Server Creation <a name="virtualbox-server"></a>
+
+ * Go ahead and click the blue button that says "New".  
+ ![Oracle VirtualBox Manager](https://media.giphy.com/media/zTuHcSCCtACGhmfT2n/giphy.gif)
+
+ * You will now be prompted with naming your new virtual machine and choosing an operating system. I recommend just choosing the name "CentOS" and it automatically picks the operating system type as Linux and the version as Red Hat (64-bit), then you can just choose a different name before continuing and it keeps the OS. You may also just name the server and choose from the drop down list. Then hit next, and continue with the default options as shown below, unless you specifically know what you are changing.
+ ![Oracle VirtualBox Manager](https://media.giphy.com/media/yr7TsUTcbV01vGuj1l/giphy.gif)
+   - Default options for setting up your VirtualBox Server are as follows:  
+   ![]()
+   ![]()
+   ![]()
+
+
+
 
 * #### VirtualBox Networking <a name="virtualbox-network"></a>
 
  * If you have not already installed [VirtualBox](#lab-creation), then you'll need to visit the [Creating a lab](#lab-creation) portion of this repo and install [Oracle VirtualBox](#lab-creation) for Windows, OSX, Linux, or Solaris.
- * Go ahead and click the blue button that says "New".
- ![Oralce VirtualBox Manager](https://docs.oracle.com/en/virtualization/virtualbox/6.0/user/images/virtualbox-main-empty.png)
 
- * You will now be prompted with naming your new virtual machine and choosing an operating system. I recommend just choosing the name CentOS-7 and it automatically picks the operating system type as Linux and the version is Red Hat (64-bit). Then hit next, and continue with the default options, unless you specifically know what you are changing.
- ![Oracle VirtualBox Manager](https://javapointers.com/wp-content/uploads/2020/04/new-vbox-centos.png)
-
-<iframe src="https://giphy.com/embed/8VkgrPdxMh0oo" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/graphic-web-premium-8VkgrPdxMh0oo">via GIPHY</a></p>
-
- ![Orance VirtualBox Manaer]()
+ * Now that you have downloaded [Oracle VirtualBox](#lab-creation) you will be setting up your Nat Network and Host-only Adapter. Since you will not have a starting server, you will need to configure your Network information or you can also do this after creating your server. It can be tricky either way so pay attention!  
+ Follow the instructions below to configure your NatNetwork.  
+   - Click Preferences.  
+   ![VirtualBox Preferences](https://media.giphy.com/media/0abmjDJ1ZMhH3v4OQq/giphy.gif)
+   - Click Networking.  
+   ![VirtualBox Network](https://media.giphy.com/media/xemmReUK5GEh0kaK6r/giphy.gif)
+   - Click the add new NAT network button and click Ok to continue with your new NatNetwork.  
+   ![VirtualBox NAT Network](https://media.giphy.com/media/cWL4c9vsqvnmBxzxfJ/giphy.gif)
 
 * #### Installing from DVD <a name="install-dvd"></a>
 
@@ -295,3 +306,10 @@ crw--w----. 1 cellis tty 136, 0 Oct  1 04:46 /dev/pts/0
   * ##### Linux SSH <a name="redhat-ssh"></a>
 
 ## Markdown <a name="md"></a>
+
+
+[software]: https://www.virtualbox.org/wiki/Downloads
+[fusion]: https://www.vmware.com/products/fusion/fusion-evaluation.html
+[open-source]: https://en.wikipedia.org/wiki/Open-source_software
+[proprietary]: https://en.wikipedia.org/wiki/Proprietary_software
+[closed-source]: https://en.wikipedia.org/wiki/Proprietary_software
