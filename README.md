@@ -207,6 +207,8 @@ You will need to create a lab using a [Hypervisor](#vmhypevisor) and the most li
 
 ## Learning the Essentials of CentOS Enterprise Linux 7 Administration <a name="essentials"></a>
 
+*You may find that there are things that you may not know that may or may not be mentioned here. That's okay because every hurdle is just a learning experience. I will have more courses to help you better understand CentOS Enterprise Linux 7, this course is just the Essential crash course.*
+
 * ### Installing CentOS Enterprise Linux 7 Overview <a name="install-centos"></a> <a name="overview"></a>
 
   * As we make our way through this portion of the repository you will be doing the following:  
@@ -222,8 +224,6 @@ You will need to create a lab using a [Hypervisor](#vmhypevisor) and the most li
    Both of our ISO installs will be minimal installs  
    Adding X Server GUI to Server 1  
    Install VirtualBox Guest Additions
-
-  * *You may find that there are things that you may not know that may or may not be mentioned here. That's okay because every hurdle is just a learning experience. I will have more courses to help you better understand CentOS Enterprise Linux 7, this course is just the Essential crash course.*
 
 
 * #### Downloading CentOS <a name="download-centos"></a>
