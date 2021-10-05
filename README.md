@@ -35,8 +35,8 @@ Inside this repository will be a tutorial on how to go from zero to hero on the 
 
 ## Prerequisites <a name="prereq"></a>
 
-1. *Having a basic understanding of __[System Administration](https://victorops.com/blog/definitive-guide-for-being-a-system-administrator)__ is recommended for this repository and for the Demo, otherwise [Google](www.google.com) is your best friend.* <a name="prereq"></a>
-2. *Having a basic understanding of __[Markdown](www.markdowntutorial.com)__ is not required to your abilities on taking this course. It will be essential for you to take notes professionally and staying organized. This will also help you learn how to use [Markdown](www.markdowntutorial.com) by repeatedly writing it by preparing you for an Enterprise level experience. Use Markdown tutorials online, it is quite easy to use.* <a name="md"></a>
+1. <a name="prereq"></a> *Having a basic understanding of __[System Administration](https://victorops.com/blog/definitive-guide-for-being-a-system-administrator)__ is recommended for this repository and for the Demo, otherwise [Google](www.google.com) is your best friend.*
+2. <a name="md"></a> *Having a basic understanding of __[Markdown](https://www.markdowntutorial.com/)__ is not required to your abilities on taking this course. It will be essential for you to take notes professionally and staying organized. This will also help you learn how to use [Markdown](https://www.markdowntutorial.com/) by repeatedly writing it by preparing you for an Enterprise level experience. Use Markdown tutorials online, it is quite easy to use.*
 
    * Markdown is an essential text editor and there are different flavors of Markdown depending on what platform you're using. For example, using shell commands on Github are called console commands.
 
