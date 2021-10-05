@@ -93,7 +93,8 @@ Which happens to be ```/etc/system-release```.
    ```console
    Wed Nov 10 03:15:34 EST 2021
    ```  
-   * If you'd like to check a past date, you can use ```date --date "40 days ago"```, the same applies for time ```date --date "1 hour ago"```, etc.
+   * If you'd like to check a past date, you can use ```date --date "40 days ago"```  
+   The same applies for time ```date --date "1 hour ago"```, etc.
    ```console
    Sun Aug 22 04:17:45 EDT 2021
    Fri Oct  1 02:57:45 EDT 2021
