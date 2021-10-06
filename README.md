@@ -267,29 +267,29 @@ You will need to create a lab using a [Hypervisor](#vmhypevisor) and the most li
 
  *  You will now be prompted with naming your new virtual machine and choosing an operating system. I recommend just choosing the name "CentOS" and it automatically picks the operating system type as Linux and the version as Red Hat (64-bit). You can then just choose a different name like "server1" before continuing and it keeps the same OS as before. You may also just name the server and choose from the drop down list. Hit next, and continue with the default options as shown below, unless you specifically know what you are changing.  
 
-  *  Default options for setting up your VirtualBox Server are as follows:
-     * Selecting your server name and operating system   
-     ![Oracle VirtualBox Manager](https://media.giphy.com/media/yr7TsUTcbV01vGuj1l/giphy.gif)
-     * Choosing your memory size. Stick to defaults  
-     ![Oracle VirtualBox Storage](https://media.giphy.com/media/7AoRg5UqXkLWmDBoog/giphy.gif)
-     * Creating your Virtual Machine Hard disk. Stick to defaults  
-     ![Oracle VirtualBox Hard Disk](https://media.giphy.com/media/SCqWxn6AGo2CaXOtJr/giphy.gif)
-     * Choosing your Hard Disk file type. Stick to defaults  
-     ![Oracle VirtualBox Hard Disk Type](https://media.giphy.com/media/17s5qiFhCrYwU9bPPL/giphy.gif)
-     * Choosing your storage on the Hard Disk. Stick to defaults  
-     ![Oracle VirtualBox Hard Disk Storage](https://media.giphy.com/media/k0yzBmjwkHUfJgiWmN/giphy.gif)
-     * Choosing your file location and size. Stick to defaults  
-     ![Oracle VirtualBox File Location/Size](https://media.giphy.com/media/LPOiUFEzd0GX8GzkcL/giphy.gif)
+ *  Choose the following options to setup your VirtualBox:
+    * Selecting your server name and operating system   
+    ![Oracle VirtualBox Manager](https://media.giphy.com/media/yr7TsUTcbV01vGuj1l/giphy.gif)
+    * Choosing your memory size. Stick to defaults  
+    ![Oracle VirtualBox Storage](https://media.giphy.com/media/7AoRg5UqXkLWmDBoog/giphy.gif)
+    * Creating your Virtual Machine Hard disk. Stick to defaults  
+    ![Oracle VirtualBox Hard Disk](https://media.giphy.com/media/SCqWxn6AGo2CaXOtJr/giphy.gif)
+    * Choosing your Hard Disk file type. Stick to defaults  
+    ![Oracle VirtualBox Hard Disk Type](https://media.giphy.com/media/17s5qiFhCrYwU9bPPL/giphy.gif)
+    * Choosing your storage on the Hard Disk. Stick to defaults  
+    ![Oracle VirtualBox Hard Disk Storage](https://media.giphy.com/media/k0yzBmjwkHUfJgiWmN/giphy.gif)
+    * Choosing your file location and size. Stick to defaults  
+    ![Oracle VirtualBox File Location/Size](https://media.giphy.com/media/LPOiUFEzd0GX8GzkcL/giphy.gif)
 
-  *  Server Storage steps are as follows:  
-     * Left click on the server1 and choose Storage.  
-     ![server1 storage](https://media.giphy.com/media/fnIagfkWa5FLxmKf6O/giphy.gif)
-     * Choose Empty,  
-     Choose the blue disk,  
-     Choose/Create a Virtual Optical Disk...  
-     ![server1 storage controller:IDE](https://media.giphy.com/media/1S2O2Q5fudJR4071d3/giphy.gif)
-     * Choose the Minimal install __CentOS-7-x86_64-Minimal-2009.iso__.
-     ![server1 iso-minial](https://media.giphy.com/media/c5sKUBS6gzy1nBXvy9/giphy.gif)
+ *  Server Storage steps are as follows:  
+    * Left click on the server1 and choose Storage.  
+    ![server1 storage](https://media.giphy.com/media/fnIagfkWa5FLxmKf6O/giphy.gif)
+    * Choose Empty,  
+    Choose the blue disk,  
+    Choose/Create a Virtual Optical Disk...  
+    ![server1 storage controller:IDE](https://media.giphy.com/media/1S2O2Q5fudJR4071d3/giphy.gif)
+    * Choose the Minimal install __CentOS-7-x86_64-Minimal-2009.iso__.
+    ![server1 iso-minial](https://media.giphy.com/media/c5sKUBS6gzy1nBXvy9/giphy.gif)
 
 * #### Installing from the Networking <a name="install-network"></a>
 
