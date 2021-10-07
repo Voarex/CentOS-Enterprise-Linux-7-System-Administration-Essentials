@@ -251,8 +251,9 @@ You will need to create a lab using a [Hypervisor](#vmhypevisor) and the most li
 
   *  Now that you have downloaded [Oracle VirtualBox](#lab-creation) you will be setting up your NatNetwork settings. If you did not create a server don't worry you weren't supposed to. You will need to configure your network settings first. You technically can setup Network settings before or after, but it can be tricky either way, so pay attention and follow the instructions below to configure your NatNetwork.
 
-  * Click on Tools and click Preferences, you may also click File and preferences. Also, Ctrl + G or Left Command + G.  
-  ![VirtualBox Preferences](https://media.giphy.com/media/0abmjDJ1ZMhH3v4OQq/giphy.gif)
+    * Click on Tools and click Preferences, you may also click File and preferences.  
+    Ctrl + G or Left Command + G.  
+    ![VirtualBox Preferences](https://media.giphy.com/media/0abmjDJ1ZMhH3v4OQq/giphy.gif)
     * Click Networking.  
     ![VirtualBox Network](https://media.giphy.com/media/xemmReUK5GEh0kaK6r/giphy.gif)
     * Click the add new NAT network button and click Ok to continue with your new NatNetwork.  
