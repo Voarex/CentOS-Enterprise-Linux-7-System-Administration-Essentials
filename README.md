@@ -170,7 +170,7 @@ We just demonstrated what using a lab environment looks like inside a hypervisor
 
 You will need to create a lab using a [Hypervisor](#vmhypevisor) and the most likely scenario is a free or open source software, but you can also use a closed source software if you're willing to pay for more stable features but deal with the certain support resolution restrictions.
 
- * This is where we will use your host machine to connect to your virtual machine. Usually this consists of the following machines; host machine that's using VirtualBox , the CentOS 7 master server, CentOS 7 GUI server1, and CentOS 7 CLI server2. The command line(CLI) server will be more useful to you than the graphical user interface(GUI) serve, because we will be using enterprise systems. Enterprise systems mainly consist of remote connections via the CLI.  
+ * This is where we will use your host machine to connect to your virtual machine. Usually this consists of the following machines; host machine that's using VirtualBox , the CentOS 7 master server, CentOS 7 GUI server1, and CentOS 7 CLI server2. The command line(CLI) server will be more useful to you than the graphical user interface(GUI) serve, because we will be using enterprise systems. Enterprise systems mainly consist of remote connections via the CLI.
 
  * The master system will really be of less use to you since you probably do not have a local web server setup and that requires an installation of CentOS 7 for the web server or ftp server. You can also mimic the same remote installs from a web server by looking at CentOS distributions that are available to download via mirror servers.
 
@@ -214,82 +214,80 @@ You will need to create a lab using a [Hypervisor](#vmhypevisor) and the most li
 
 * ### Installing CentOS Enterprise Linux 7 Overview <a name="install-centos"></a> <a name="overview"></a>
 
- As we make our way through this portion of the repository you will be doing the following:   
- Downloading ISO files  
- VirtualBox Server creation
- VirtualBox Networking  
- Installing CentOS 7 from local media  
- Installing CentOS 7 from the network   
- Both of our ISO installs will be minimal installs  
- Adding X Server GUI to Server 1  
- Install VirtualBox Guest Additions
-
+  As we make our way through this portion of the repository you will be doing the following:  
+  Downloading ISO files  
+  VirtualBox Server creation  
+  VirtualBox Networking  
+  Installing CentOS 7 from local media  
+  Installing CentOS 7 from the network  
+  Both of our ISO installs will be minimal installs  
+  Adding X Server GUI to Server 1  
+  Install VirtualBox Guest Additions
 
 * #### Downloading CentOS <a name="download-centos"></a>
 
- *  During our download of CentOS Linux 7, we will be able to install different types of CentOS as previously mentioned during the overview. We will be using a "Minimal" install for both of our servers because you can always scale up at a later date.
+  During our download of CentOS Linux 7, we will be able to install different types of CentOS as previously mentioned during the overview. We will be using a "Minimal" install for both of our servers because you can always scale up at a later date.
 
-    *  If you go to [www.CentOS.org](https://www.centOS.org) you will be given choices with tabs at the top and the two buttons under [The CentOS Project](www.centos.org). We will choose the [CentOS Linux](https://centos.org/centos-linux/) button or click the [Download](https://centos.org/download/) tab.  
-    ![CentOS.org](https://media.giphy.com/media/VmBRZik5Kxw3we4zLa/giphy.gif)
+  *  If you go to [www.CentOS.org](https://www.centOS.org) you will be given choices with tabs at the top and the two buttons under [The CentOS Project](www.centos.org). We will choose the [CentOS Linux](https://centos.org/centos-linux/) button or click the [Download](https://centos.org/download/) tab.  
+  ![CentOS.org](https://media.giphy.com/media/VmBRZik5Kxw3we4zLa/giphy.gif)
 
-    *  Once you've chosen CentOS Linux, you will be shown a few options.  
-    You will need to select the tab 7 (2009) and choose x86_64.  
-    ![CentOS Linux 7](https://media.giphy.com/media/sE7tAOEVmTJXe2pqXa/giphy.gif)
+  *  Once you've chosen CentOS Linux, you will be shown a few options.  
+  You will need to select the tab 7 (2009) and choose x86_64.  
+  ![CentOS Linux 7](https://media.giphy.com/media/sE7tAOEVmTJXe2pqXa/giphy.gif)
 
-    *  Once the __x86_64__ hyperlink has been chosen you will be presented with a list of mirrors to download your ISO that is available in your region.  
-    ![CentOS x86_64](https://media.giphy.com/media/FdZPEYRFQflCdLl2tE/giphy.gif)
+  *  Once the __x86_64__ hyperlink has been chosen you will be presented with a list of mirrors to download your ISO that is available in your region.  
+  ![CentOS x86_64](https://media.giphy.com/media/FdZPEYRFQflCdLl2tE/giphy.gif)
 
-    *  Once you click the mirror hyperlink you will be shown ISO files to choose from. We will be choosing __CentOS-7-x86_64-Minimal-2009.iso__ download. The ISO list is as follows:  
-    Everything DVD - All that CentOS can provide in 7GB+ download   
-    DVD - 4GB Full Installation DVD  
-    Minimal - A CD size install around 600MB, enough for a Minimal install of CentOS.  
-    NetInstall - A download about ~10MB for a pure NetInstall.  
-    ![Index of CentOS](https://media.giphy.com/media/218VGNfKFdxP7tsaYJ/giphy.gif)
+  *  Once you click the mirror hyperlink you will be shown ISO files to choose from. We will be choosing __CentOS-7-x86_64-Minimal-2009.iso__ download. The ISO list is as follows:  
+  Everything DVD - All that CentOS can provide in 7GB+ download   
+  DVD - 4GB Full Installation DVD  
+  Minimal - A CD size install around 600MB, enough for a Minimal install of CentOS.  
+  NetInstall - A download about ~10MB for a pure NetInstall.  
+  ![Index of CentOS](https://media.giphy.com/media/218VGNfKFdxP7tsaYJ/giphy.gif)
 
 * #### VirtualBox Networking <a name="virtualbox-network"></a>
 
- *  If you have not already installed [VirtualBox](#lab-creation), then you'll need to visit the [Creating a lab](#lab-creation) portion of this repo and install [Oracle VirtualBox](#lab-creation) for Windows, OSX, Linux, or Solaris.
+  If you have not already installed [VirtualBox](#lab-creation), then you'll need to visit the [Creating a lab](#lab-creation) portion of this repo and install [Oracle VirtualBox](#lab-creation) for Windows, OSX, Linux, or Solaris.
 
- *  Now that you have downloaded [Oracle VirtualBox](#lab-creation) you will be setting up your NatNetwork settings. If you did not create a server don't worry you weren't supposed to. You will need to configure your network settings first. You technically can setup Network settings before or after, but it can be tricky either way, so pay attention!
+  *  Now that you have downloaded [Oracle VirtualBox](#lab-creation) you will be setting up your NatNetwork settings. If you did not create a server don't worry you weren't supposed to. You will need to configure your network settings first. You technically can setup Network settings before or after, but it can be tricky either way, so pay attention and follow the instructions below to configure your NatNetwork.
 
- *  Follow the instructions below to configure your NatNetwork.
-    * Click on Tools and click Preferences, you may also click File and preferences. Also, Ctrl + G or Left Command + G.  
-    ![VirtualBox Preferences](https://media.giphy.com/media/0abmjDJ1ZMhH3v4OQq/giphy.gif)
+  * Click on Tools and click Preferences, you may also click File and preferences. Also, Ctrl + G or Left Command + G.  
+  ![VirtualBox Preferences](https://media.giphy.com/media/0abmjDJ1ZMhH3v4OQq/giphy.gif)
     * Click Networking.  
     ![VirtualBox Network](https://media.giphy.com/media/xemmReUK5GEh0kaK6r/giphy.gif)
     * Click the add new NAT network button and click Ok to continue with your new NatNetwork.  
     ![VirtualBox NAT Network](https://media.giphy.com/media/cWL4c9vsqvnmBxzxfJ/giphy.gif)
 
 * #### Installing from Media <a name="install-media"></a>
+  Here we will be installing from the physical media and adding a GUI to server1.
 
- *  Go ahead and click the blue button that says "New".  
- ![Oracle VirtualBox Manager](https://media.giphy.com/media/zTuHcSCCtACGhmfT2n/giphy.gif)
+  *  Go ahead and click the blue button that says "New".  
+  ![Oracle VirtualBox Manager](https://media.giphy.com/media/zTuHcSCCtACGhmfT2n/giphy.gif)
 
- *  You will now be prompted with naming your new virtual machine and choosing an operating system. I recommend just choosing the name "CentOS" and it automatically picks the operating system type as Linux and the version as Red Hat (64-bit). You can then just choose a different name like "server1" before continuing and it keeps the same OS as before. You may also just name the server and choose from the drop down list. Hit next, and continue with the default options as shown below, unless you specifically know what you are changing.  
+  *  You will now be prompted with naming your new virtual machine and choosing an operating system. I recommend just choosing the name "CentOS" and it automatically picks the operating system type as Linux and the version as Red Hat (64-bit). You can then just choose a different name like "server1" before continuing and it keeps the same OS as before. You may also just name the server and choose from the drop down list. Hit next, and continue with the default options as shown below, unless you specifically know what you are changing.  
+  ![Oracle VirtualBox Manager](https://media.giphy.com/media/yr7TsUTcbV01vGuj1l/giphy.gif)
 
- *  Choose the following options to setup your VirtualBox:
-    * Selecting your server name and operating system   
-    ![Oracle VirtualBox Manager](https://media.giphy.com/media/yr7TsUTcbV01vGuj1l/giphy.gif)
-    * Choosing your memory size. Stick to defaults  
-    ![Oracle VirtualBox Storage](https://media.giphy.com/media/7AoRg5UqXkLWmDBoog/giphy.gif)
-    * Creating your Virtual Machine Hard disk. Stick to defaults  
-    ![Oracle VirtualBox Hard Disk](https://media.giphy.com/media/SCqWxn6AGo2CaXOtJr/giphy.gif)
-    * Choosing your Hard Disk file type. Stick to defaults  
-    ![Oracle VirtualBox Hard Disk Type](https://media.giphy.com/media/17s5qiFhCrYwU9bPPL/giphy.gif)
-    * Choosing your storage on the Hard Disk. Stick to defaults  
-    ![Oracle VirtualBox Hard Disk Storage](https://media.giphy.com/media/k0yzBmjwkHUfJgiWmN/giphy.gif)
-    * Choosing your file location and size. Stick to defaults  
-    ![Oracle VirtualBox File Location/Size](https://media.giphy.com/media/LPOiUFEzd0GX8GzkcL/giphy.gif)
+     *  Choose the following options to setup your VirtualBox:
+        * Choosing your memory size. Stick to defaults  
+        ![Oracle VirtualBox Storage](https://media.giphy.com/media/7AoRg5UqXkLWmDBoog/giphy.gif)
+        * Creating your Virtual Machine Hard disk. Stick to defaults  
+        ![Oracle VirtualBox Hard Disk](https://media.giphy.com/media/SCqWxn6AGo2CaXOtJr/giphy.gif)
+        * Choosing your Hard Disk file type. Stick to defaults  
+        ![Oracle VirtualBox Hard Disk Type](https://media.giphy.com/media/17s5qiFhCrYwU9bPPL/giphy.gif)
+        * Choosing your storage on the Hard Disk. Stick to defaults  
+        ![Oracle VirtualBox Hard Disk Storage](https://media.giphy.com/media/k0yzBmjwkHUfJgiWmN/giphy.gif)
+        * Choosing your file location and size. Stick to defaults  
+        ![Oracle VirtualBox File Location/Size](https://media.giphy.com/media/LPOiUFEzd0GX8GzkcL/giphy.gif)
 
- *  Server Storage steps are as follows:  
-    * Left click on the server1 and choose Storage.  
-    ![server1 storage](https://media.giphy.com/media/fnIagfkWa5FLxmKf6O/giphy.gif)
-    * Choose Empty,  
-    Choose the blue disk,  
-    Choose/Create a Virtual Optical Disk...  
-    ![server1 storage controller:IDE](https://media.giphy.com/media/1S2O2Q5fudJR4071d3/giphy.gif)
-    * Choose the Minimal install __CentOS-7-x86_64-Minimal-2009.iso__.
-    ![server1 iso-minial](https://media.giphy.com/media/c5sKUBS6gzy1nBXvy9/giphy.gif)
+  *  Server Storage steps are as follows:  
+     * Left click on the server1 and choose Storage.  
+     ![server1 storage](https://media.giphy.com/media/fnIagfkWa5FLxmKf6O/giphy.gif)
+     * Choose Empty,  
+     Choose the blue disk,  
+     Choose/Create a Virtual Optical Disk...  
+     ![server1 storage controller:IDE](https://media.giphy.com/media/1S2O2Q5fudJR4071d3/giphy.gif)
+     * Choose the Minimal install __CentOS-7-x86_64-Minimal-2009.iso__.
+     ![server1 iso-minial](https://media.giphy.com/media/c5sKUBS6gzy1nBXvy9/giphy.gif)
 
 * #### Installing from the Networking <a name="install-network"></a>
 
