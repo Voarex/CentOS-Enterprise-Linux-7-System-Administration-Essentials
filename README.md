@@ -280,7 +280,7 @@ You will need to create a lab using a [Hypervisor](#vmhypevisor) and the most li
         * Choosing your file location and size. Stick to defaults  
         ![Oracle VirtualBox File Location/Size](https://media.giphy.com/media/LPOiUFEzd0GX8GzkcL/giphy.gif)
 
-  *  Server Storage steps are as follows:  
+  *  Server Storage steps are as follows:
      * Left click on the server1 and choose Storage.  
      ![server1 storage](https://media.giphy.com/media/fnIagfkWa5FLxmKf6O/giphy.gif)
      * Choose Empty,  
@@ -289,6 +289,22 @@ You will need to create a lab using a [Hypervisor](#vmhypevisor) and the most li
      ![server1 storage controller:IDE](https://media.giphy.com/media/1S2O2Q5fudJR4071d3/giphy.gif)
      * Choose the Minimal install __CentOS-7-x86_64-Minimal-2009.iso__.
      ![server1 iso-minial](https://media.giphy.com/media/c5sKUBS6gzy1nBXvy9/giphy.gif)
+
+  *  Server Networking steps are as follows:
+     *  Left click on the network under server1  
+     ![server1 Networking](https://media.giphy.com/media/trJc53B40JmEedJ0KB/giphy.gif)
+        *  Click "Enable Network Adapter" if it is not enabled  
+        ![server1 Network Adapter 1](https://media.giphy.com/media/2fTjUBlc7Mu5mQF7sN/giphy.gif)  
+           *  Click "Attached To:" and choose "NAT Network"  
+           ![server1 Network Adapter 1](https://media.giphy.com/media/ASuKSldNd2zuYUEoh8/giphy.gif)
+              *  Click "Name:" Choose "NatNetwork", the network we created from before and click "Ok"  
+              ![server1 Network Adapter 1](https://media.giphy.com/media/EomdhYlekXyNyG8VEw/giphy.gif)
+                 *  Click on Adapter 2 click "Enable Network Adapter" if it is not enabled  
+                 ![server1 Network Adapter 2](https://media.giphy.com/media/h5YFfKo7ANWQ2Qc8mC/giphy.gif)
+                    *  Click "Attached to:" and choose "Host-only Adapter"  
+                    ![server1 Network Adapter 2 ](https://media.giphy.com/media/GnPRpUQyaEknTC6tug/giphy.gif)
+                       *  Click "Name:" Choose "VirtualBox Host-only Ethernet Adapter", click "Ok"  
+                       ![server1 Network Adapter 2](https://media.giphy.com/media/wGBa0m4te4ESWDkn5e/giphy.gif)
 
 * #### Installing from the Networking <a name="install-network"></a>
 
