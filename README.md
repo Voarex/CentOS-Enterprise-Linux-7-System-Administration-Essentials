@@ -23,7 +23,7 @@ Inside this repository will be a tutorial on how to go from zero to hero on the 
       3. [Installing from Media](#install-media)
       4. [Installing from Network](#install-network)
       5. [Configure CentOS 7 Networking](#configure-centos-network)
-      6. [Adding the GUI](#gui)
+      6. [Installing X](#install-x)
       7. [Add Guest Additions](#guest-additions)
    1. [Help and Archiving](#help)
    1. [Working on CLI/Reading Files](#cli-read-files)
@@ -348,7 +348,7 @@ You will need to create a lab using a [Hypervisor](#vmhypevisor) and the most li
 *  ### Installing from the Network <a name="install-network"></a>
   Here we will be installing from the network, which is very similar to media. In fact, you follow the same first few steps. You will need to create and configure a new server and do all of the steps right until you have to start the server. This will be your server2. Mine may say server3, ignore that.
 
-  *  You will need to configure another server and make the same steps up until this point. You will now start the server by pressing "Start".  
+  *  You will need to configure another server and make the same steps up until before you start the server. You will now start the server by pressing "Start".  
   ![server2 Start](https://media.giphy.com/media/TrJWqZhfSmSTXqbwlE/giphy.gif)
      *  Use the up arrow to highlight __Install CentOS 7__ and hit Enter.
      ![server2 Install](https://media.giphy.com/media/12DKfJeLdYG2MqB1ms/giphy.gif)
@@ -391,14 +391,53 @@ You will need to create a lab using a [Hypervisor](#vmhypevisor) and the most li
   ![server1 Finish Config & Reboot](https://media.giphy.com/media/SOsPpdRhkJh9qtjMx1/giphy.gif)
   *  Click Reboot.  
   ![server1 Reboot](https://media.giphy.com/media/HUdDWmqKHNjFIKl8Hq/giphy.gif)
-  *  Server Login - using root as the login.  
-  ![server Login](https://media.giphy.com/media/ba0X96cOfq0USut7rY/giphy.gif)  
+  *  Server Login - exit this and move back to server1.  
+  ![server Login](https://media.giphy.com/media/eGitN42jaejwzdmeqX/giphy.gif)  
 
 * ### Configure CentOS 7 Networking <a name="configure-centos-network"></a>
 
-  *
+  * You will connect to server1 as root and can connect to the VM using an SSH client if you like. Once connected to server1 you will insert the command: ```ip a s```, which stands for IP Address show. The first loopback has an X because this is the local server and isn't what we are looking for.   
+  ```
+  [root@server1 ~]# ip a s
+  ```   
+  ![server configure networking ip](https://media.giphy.com/media/oT6r3alEGMnzMT7k1Z/giphy.gif)  
 
-*  ### Adding the GUI <a name="gui"></a>
+  * If you are not seeing the address you can CTRL + L (Clear) and use ```nmcli conn show```, looking at the results we can see the connections we have.
+  ```
+  [root@server1 ~]# nmcli conn show
+  ```   
+  ![server configure networking ip connections](https://media.giphy.com/media/jxa3BFqP4f5dIA3wBI/giphy.gif)
+
+  * If one of those connections isn't up or isn't showing us our IP address we can do ```nmcli conn up enp0s3``` and ```nmcli conn up enp0s8``` to show both interfaces.
+  ```
+  [root@server1 ~]# nmcli conn up enp0s3
+  ```
+  ```
+  [root@server1 ~]# nmcli conn up enp0s8
+  ```   
+  ![server1 configure networking ip connections](https://media.giphy.com/media/IiZdQoDaWsQKnO9nrG/giphy.gif)
+
+  * You can do ```ip a s``` to verify they are connected to the network. However we need to make sure this happens all the time.  
+  ```
+  [root@server1 ~]# ip a s
+  ```   
+  ![server configure networking ip](https://media.giphy.com/media/oT6r3alEGMnzMT7k1Z/giphy.gif)
+
+  * In order to make sure the connections are verified all the time, we need to do some commans under root very carefully. The command we are going to run is CASE SENSITIVE. We will run sed for stream editing and -i for in-place edits, and s/ searching for the string. The forward slashes separate: ```sed -i s/ONBOOT=no/ONBOOT=yes/ /etc/sysconfig/network-scripts/ifcfg-enp0s3```. If you use tab complete for most of your directories it will autocomplete ensuring less mistakes are made. Using the Up arrow key you can do the same for the enpo0s8, by removing the 3 and replacing with the 8. ```sed -i s/ONBOOT=no/ONBOOT=yes/ /etc/sysconfig/network-scripts/ifcfg-enp0s3```. We can search the text within a file using ```grep```. ```grep ONBOOT !$``` !$ for the last argument, and then up arrow and repeat for both ```grep ONBOOT /etc/sysconfig/netwwork-scripts/ifcfg-enp0s3```.
+  ```
+  [root@server1 ~]# sed -i s/ONBOOT=no/ONBOOT=yes/ /etc/sysconfig/network-scripts/ifcfg-enp0s3
+  [root@server1 ~]# sed -i s/ONBOOT=no/ONBOOT=yes/ /etc/sysconfig/network-scripts/ifcfg-enpo0s8
+  [root@server1 ~]# grep ONBOOT !$
+  grep ONBOOT /etc/sysconfig/network-scripts/ifcfg-enpo0s8
+  ONBOOT=yes
+  [root@server1 ~]# grep ONBOOT /etc/sysconfig/network-scripts/ifcfg-enpo0s3
+  ONBOOT="yes"
+  [root@server1 ~]#
+  ```  
+  ![server1 configure networking onboot](https://media.giphy.com/media/Zzp8eT6PJt0MpKMJwQ/giphy.gif)
+
+
+*  ### Adding the GUI <a name="install-x"></a>
 
 *  ### Add Guest Additions <a name="guest-additions"></a>
 
