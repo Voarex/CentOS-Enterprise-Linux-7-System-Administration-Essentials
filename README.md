@@ -358,7 +358,7 @@ You will need to create a lab using a [Hypervisor](#vmhypevisor) and the most li
      ![server2 Installation Destination](https://media.giphy.com/media/YILG2lvkvWp5qeBAa4/giphy.gif)
      *  Click "Done"  
      ![server2 Installation Destination Done](https://media.giphy.com/media/xdKwjPRAqENWa87IL2/giphy.gif)
-     *  Click "Network & Host Name"
+     *  Click "Network & Host Name"  
      ![server2 Network & Host Name](https://media.giphy.com/media/cXzBTvSYDOwDNGDLil/giphy.gif)
      *  Enable both the Networks and Name the Host network (server2.example.com)
      ![server2 Network & Host Name](https://media.giphy.com/media/Ty0MGlLOFU8eb3eVm7/giphy.gif)
