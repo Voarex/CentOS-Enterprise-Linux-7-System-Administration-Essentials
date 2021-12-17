@@ -22,8 +22,9 @@ Inside this repository will be a tutorial on how to go from zero to hero on the 
       2. [VirtualBox Networking](#virtualbox-network)
       3. [Installing from Media](#install-media)
       4. [Installing from Network](#install-network)
-      5. [Adding the GUI](#gui)
-      6. [Add Guest Additions](#guest-additions)
+      5. [Configure CentOS 7 Networking](#configure-centos-network)
+      6. [Adding the GUI](#gui)
+      7. [Add Guest Additions](#guest-additions)
    1. [Help and Archiving](#help)
    1. [Working on CLI/Reading Files](#cli-read-files)
    1. [Permission and Root Access](#permissions)
@@ -311,7 +312,7 @@ You will need to create a lab using a [Hypervisor](#vmhypevisor) and the most li
 
   *  You may now start the server by pressing "Start"  
   ![server1 Start](https://media.giphy.com/media/TrJWqZhfSmSTXqbwlE/giphy.gif)
-     *  Use the up arrow to highlight __Install CentOS 7__  
+     *  Use the up arrow to highlight __Install CentOS 7__ and hit Enter.
      ![server1 Install](https://media.giphy.com/media/12DKfJeLdYG2MqB1ms/giphy.gif)
      *  Choose your language  
      ![server1 Language](https://media.giphy.com/media/ZpCSlbptR5M4PbuMCk/giphy.gif)
@@ -345,6 +346,57 @@ You will need to create a lab using a [Hypervisor](#vmhypevisor) and the most li
      ![server Login](https://media.giphy.com/media/eGitN42jaejwzdmeqX/giphy.gif)
 
 *  ### Installing from the Network <a name="install-network"></a>
+  Here we will be installing from the network, which is very similar to media. In fact, you follow the same first few steps. You will need to create and configure a new server and do all of the steps right until you have to start the server. This will be your server2. Mine may say server3, ignore that.
+
+  *  You will need to configure another server and make the same steps up until this point. You will now start the server by pressing "Start".  
+  ![server2 Start](https://media.giphy.com/media/TrJWqZhfSmSTXqbwlE/giphy.gif)
+     *  Use the up arrow to highlight __Install CentOS 7__ and hit Enter.
+     ![server2 Install](https://media.giphy.com/media/12DKfJeLdYG2MqB1ms/giphy.gif)
+     *  Choose your language  
+     ![server2 Language](https://media.giphy.com/media/ZpCSlbptR5M4PbuMCk/giphy.gif)
+     *  Click "Installation Destination"
+     ![server2 Installation Destination](https://media.giphy.com/media/YILG2lvkvWp5qeBAa4/giphy.gif)
+     *  Click "Done"  
+     ![server2 Installation Destination Done](https://media.giphy.com/media/xdKwjPRAqENWa87IL2/giphy.gif)
+     *  Click "Network & Host Name"
+     ![server2 Network & Host Name](https://media.giphy.com/media/cXzBTvSYDOwDNGDLil/giphy.gif)
+     *  Enable both the Networks and Name the Host network (server2.example.com)
+     ![server2 Network & Host Name](https://media.giphy.com/media/Ty0MGlLOFU8eb3eVm7/giphy.gif)
+
+     ###### NOW YOU ARE CAUGHT UP... and we can begin with the difference.
+
+  * Choose "Installation Source".   
+  ![server2 Installation Source](https://media.giphy.com/media/WmpL3VSADbtN2K4TDW/giphy.gif)
+  * Select "On The Network", and you can use your mirror, or a local host i.e 192.168.56.220/centos7/ etc. Click Done.  
+  ![server2 On The Network](https://media.giphy.com/media/3COO8NIa22fXrq1cjQ/giphy.gif)
+  * You should be downloading the new package.  
+  ![server2 OTN Downloading Package](https://media.giphy.com/media/ONDLiaEMi0Su7TCxLA/giphy.gif)
+  * Choose "Software Selection".  
+  ![server2 Software Selection](https://media.giphy.com/media/G2XQYOVbgBJkOVSwJL/giphy.gif)
+  *  Click "Begin Installation"  
+  ![server1 Begin Installation](https://media.giphy.com/media/7RxLBm2YF0gD79aHAv/giphy.gif)
+  *  Let's setup our Root Password. Root is the administrator user  
+  ![server1 Root Password](https://media.giphy.com/media/taCP3pwKUacRDhgFUw/giphy.gif)
+  *  Choose an easy password to remember, click "Done" twice  
+  ![server1 Root Password Confirm](https://media.giphy.com/media/fPmAXNAkVsAB0rYvH5/giphy.gif)
+  *  Now do the same for "User Creation"  
+  ![server1 User Creation](https://media.giphy.com/media/d0AQSZnBbt25lhYVAG/giphy.gif)
+  *  Leave the Full Name blank,  
+  Enter your username,  
+  add to Administration Wheel,  
+  and choose a password.  
+  Confirm by clicking "Done" twice  
+  ![server1 User Password](https://media.giphy.com/media/nDNCsFyKN39r30doap/giphy.gif)
+  *  Click Finish Config.  
+  ![server1 Finish Config & Reboot](https://media.giphy.com/media/SOsPpdRhkJh9qtjMx1/giphy.gif)
+  *  Click Reboot.  
+  ![server1 Reboot](https://media.giphy.com/media/HUdDWmqKHNjFIKl8Hq/giphy.gif)
+  *  Server Login - using root as the login.  
+  ![server Login](https://media.giphy.com/media/ba0X96cOfq0USut7rY/giphy.gif)  
+
+* ### Configure CentOS 7 Networking <a name="configure-centos-network"></a>
+
+  *
 
 *  ### Adding the GUI <a name="gui"></a>
 
