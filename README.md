@@ -354,7 +354,7 @@ You will need to create a lab using a [Hypervisor](#vmhypevisor) and the most li
      ![server2 Install](https://media.giphy.com/media/12DKfJeLdYG2MqB1ms/giphy.gif)
      *  Choose your language  
      ![server2 Language](https://media.giphy.com/media/ZpCSlbptR5M4PbuMCk/giphy.gif)
-     *  Click "Installation Destination"
+     *  Click "Installation Destination"  
      ![server2 Installation Destination](https://media.giphy.com/media/YILG2lvkvWp5qeBAa4/giphy.gif)
      *  Click "Done"  
      ![server2 Installation Destination Done](https://media.giphy.com/media/xdKwjPRAqENWa87IL2/giphy.gif)
