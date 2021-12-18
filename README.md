@@ -396,17 +396,17 @@ You will need to create a lab using a [Hypervisor](#vmhypevisor) and the most li
 
 * ### Configure CentOS 7 Networking <a name="configure-centos-network"></a>
 
-  * You will connect to server1 as root and can connect to the VM using an SSH client if you like. Once connected to server1 you will insert the command: ```ip a s```, which stands for IP Address show. The first loopback has an X because this is the local server and isn't what we are looking for.   
+  * You will connect to server1 and login as root and you can connect to the VM using an SSH client if you like. Once connected to server1 you will insert the command: ```ip a s```, which stands for IP Address Show.      
   ```
   [root@server1 ~]# ip a s
   ```   
-  ![server configure networking ip](https://media.giphy.com/media/oT6r3alEGMnzMT7k1Z/giphy.gif)  
+  ![server configure networking ip]()  
 
   * If you are not seeing the address you can CTRL + L (Clear) and use ```nmcli conn show```, looking at the results we can see the connections we have.
   ```
   [root@server1 ~]# nmcli conn show
   ```   
-  ![server configure networking ip connections](https://media.giphy.com/media/jxa3BFqP4f5dIA3wBI/giphy.gif)
+  ![server configure networking ip connections]()
 
   * If one of those connections isn't up or isn't showing us our IP address we can do ```nmcli conn up enp0s3``` and ```nmcli conn up enp0s8``` to show both interfaces.
   ```
@@ -415,29 +415,29 @@ You will need to create a lab using a [Hypervisor](#vmhypevisor) and the most li
   ```
   [root@server1 ~]# nmcli conn up enp0s8
   ```   
-  ![server1 configure networking ip connections](https://media.giphy.com/media/IiZdQoDaWsQKnO9nrG/giphy.gif)
+  ![server1 configure networking ip connections]())
 
   * You can do ```ip a s``` to verify they are connected to the network. However we need to make sure this happens all the time.  
   ```
   [root@server1 ~]# ip a s
   ```   
-  ![server configure networking ip](https://media.giphy.com/media/oT6r3alEGMnzMT7k1Z/giphy.gif)
+  ![server configure networking ip]()
 
   * In order to make sure the connections are verified all the time, we need to do some commans under root very carefully. The command we are going to run is CASE SENSITIVE. We will run sed for stream editing and -i for in-place edits, and s/ searching for the string. The forward slashes separate: ```sed -i s/ONBOOT=no/ONBOOT=yes/ /etc/sysconfig/network-scripts/ifcfg-enp0s3```. If you use tab complete for most of your directories it will autocomplete ensuring less mistakes are made. Using the Up arrow key you can do the same for the enpo0s8, by removing the 3 and replacing with the 8. ```sed -i s/ONBOOT=no/ONBOOT=yes/ /etc/sysconfig/network-scripts/ifcfg-enp0s3```. We can search the text within a file using ```grep```. ```grep ONBOOT !$``` !$ for the last argument, and then up arrow and repeat for both ```grep ONBOOT /etc/sysconfig/netwwork-scripts/ifcfg-enp0s3```.
-  ```
+  ```  
   [root@server1 ~]# sed -i s/ONBOOT=no/ONBOOT=yes/ /etc/sysconfig/network-scripts/ifcfg-enp0s3
-  [root@server1 ~]# sed -i s/ONBOOT=no/ONBOOT=yes/ /etc/sysconfig/network-scripts/ifcfg-enpo0s8
+  [root@server1 ~]# sed -i s/ONBOOT=no/ONBOOT=yes/ /etc/sysconfig/network-scripts/ifcfg-enp0s8
   [root@server1 ~]# grep ONBOOT !$
-  grep ONBOOT /etc/sysconfig/network-scripts/ifcfg-enpo0s8
+  grep ONBOOT /etc/sysconfig/network-scripts/ifcfg-enp0s8
   ONBOOT=yes
-  [root@server1 ~]# grep ONBOOT /etc/sysconfig/network-scripts/ifcfg-enpo0s3
+  [root@server1 ~]# grep ONBOOT /etc/sysconfig/network-scripts/ifcfg-enp0s3
   ONBOOT="yes"
   [root@server1 ~]#
   ```  
-  ![server1 configure networking onboot](https://media.giphy.com/media/Zzp8eT6PJt0MpKMJwQ/giphy.gif)
+  ![server1 configure networking onboot]()
 
 
-*  ### Adding the GUI <a name="install-x"></a>
+*  ### Installing X <a name="install-x"></a>
 
 *  ### Add Guest Additions <a name="guest-additions"></a>
 
