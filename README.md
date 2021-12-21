@@ -365,34 +365,34 @@ You will need to create a lab using a [Hypervisor](#vmhypevisor) and the most li
 
      ###### NOW YOU ARE CAUGHT UP... and we can begin with the difference.
 
-     * Choose "Installation Source".   
+     * Choose "Installation Source".  
      ![server2 Installation Source](https://media.giphy.com/media/WmpL3VSADbtN2K4TDW/giphy.gif)
      * Select "On The Network", and you can use your mirror, or a local host i.e 192.168.56.220/centos7/ etc. Click Done.  
      ![server2 On The Network](https://media.giphy.com/media/3COO8NIa22fXrq1cjQ/giphy.gif)
      * You should be downloading the new package.  
-    ![server2 OTN Downloading Package](https://media.giphy.com/media/ONDLiaEMi0Su7TCxLA/giphy.gif)
-    * Choose "Software Selection".  
-    ![server2 Software Selection](https://media.giphy.com/media/G2XQYOVbgBJkOVSwJL/giphy.gif)
-    *  Click "Begin Installation"  
-    ![server1 Begin Installation](https://media.giphy.com/media/7RxLBm2YF0gD79aHAv/giphy.gif)
-    *  Let's setup our Root Password. Root is the administrator user  
-    ![server1 Root Password](https://media.giphy.com/media/taCP3pwKUacRDhgFUw/giphy.gif)
-    *  Choose an easy password to remember, click "Done" twice  
-    ![server1 Root Password Confirm](https://media.giphy.com/media/fPmAXNAkVsAB0rYvH5/giphy.gif)
-    *  Now do the same for "User Creation"  
-    ![server1 User Creation](https://media.giphy.com/media/d0AQSZnBbt25lhYVAG/giphy.gif)
-    *  Leave the Full Name blank,  
-    Enter your username,  
-    add to Administration Wheel,  
-    and choose a password,  
-    Confirm by clicking "Done" twice if your password is weak.  
-    ![server1 User Password](https://media.giphy.com/media/nDNCsFyKN39r30doap/giphy.gif)
-    *  Click Finish Config.  
-    ![server1 Finish Config & Reboot](https://media.giphy.com/media/SOsPpdRhkJh9qtjMx1/giphy.gif)
-    *  Click Reboot.  
-    ![server1 Reboot](https://media.giphy.com/media/HUdDWmqKHNjFIKl8Hq/giphy.gif)
-    *  Server Login - exit this and move back to server1.  
-    ![server Login](https://media.giphy.com/media/eGitN42jaejwzdmeqX/giphy.gif)  
+     ![server2 OTN Downloading Package](https://media.giphy.com/media/ONDLiaEMi0Su7TCxLA/giphy.gif)
+     * Choose "Software Selection".  
+     ![server2 Software Selection](https://media.giphy.com/media/G2XQYOVbgBJkOVSwJL/giphy.gif)
+     *  Click "Begin Installation"  
+     ![server1 Begin Installation](https://media.giphy.com/media/7RxLBm2YF0gD79aHAv/giphy.gif)
+     *  Let's setup our Root Password. Root is the administrator user  
+     ![server1 Root Password](https://media.giphy.com/media/taCP3pwKUacRDhgFUw/giphy.gif)
+     *  Choose an easy password to remember, click "Done" twice  
+     ![server1 Root Password Confirm](https://media.giphy.com/media/fPmAXNAkVsAB0rYvH5/giphy.gif)
+     *  Now do the same for "User Creation"  
+     ![server1 User Creation](https://media.giphy.com/media/d0AQSZnBbt25lhYVAG/giphy.gif)
+     *  Leave the Full Name blank,  
+     Enter your username,  
+     add to Administration Wheel,  
+     and choose a password,  
+     Confirm by clicking "Done" twice if your password is weak.  
+     ![server1 User Password](https://media.giphy.com/media/nDNCsFyKN39r30doap/giphy.gif)
+     *  Click Finish Config.  
+     ![server1 Finish Config & Reboot](https://media.giphy.com/media/SOsPpdRhkJh9qtjMx1/giphy.gif)
+     *  Click Reboot.  
+     ![server1 Reboot](https://media.giphy.com/media/HUdDWmqKHNjFIKl8Hq/giphy.gif)
+     *  Server Login - exit this and move back to server1.  
+     ![server Login](https://media.giphy.com/media/eGitN42jaejwzdmeqX/giphy.gif)  
 
 * ### Configure CentOS 7 Networking <a name="configure-centos-network"></a>
 
