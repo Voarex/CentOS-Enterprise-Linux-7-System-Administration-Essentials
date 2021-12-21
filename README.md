@@ -439,8 +439,48 @@ You will need to create a lab using a [Hypervisor](#vmhypevisor) and the most li
 
 
 *  ### Installing X <a name="install-x"></a>
+   Here we will still be connected to server1 as root. We will be installing x.
 
+   * We will check for updates using the command ```yum update``` you can also run ```yum update -y``` if you don't want to manually accept the packages you are updating to.
+     ```
+     [root@server1 ~]# yum update -y
+     ```
+     ![server1 yum update](https://media.giphy.com/media/tkDGtpR3UVM0ZVlU7t/giphy.gif)
 
+   * We will now add some additional software. We are going to run ```yum install -y``` using the ```-y``` so we don't accept prompts to continue. We will separate any packages by using a space as it's the default separator within the command line shell. We will be installing ```redhat-lsb-core``` and also ```net-tools``` that are common packages we can use all the time. We will include ```epel-release``` which will put on a new software repository. This will allow us to access the MATE desktop graphical environment we want to use. It's important to do ```yum update``` first because of the ```kernel-headers``` to ensure they match the kernel and the headers for the development tools we will get. We need ```kernel-devel``` devel for development. This is the driver and software for the guest additions. The entire command is: ```yum install -y redbat-lsb-core net-tools epel-release kernel-headers kernel-devel```
+     ```
+     [root@server1 ~]# yum install -y redbat-lsb-core net-tools epel-release kernel-headers kernel-devel
+     ```
+     ![server1 yum install](https://media.giphy.com/media/l6bl7UefcvkpCSTIaa/giphy.gif)  
+     After completion  
+     ![server1 yum install complete](https://media.giphy.com/media/FqceGtmGeNnbmlcNMN/giphy.gif)
+
+   * Now that you have completed you can clear the screen ctrl + L and we are going to be installing a group of packages. The command ```yum groupinstall -y "Development Tools"``` is a groupinstall and the quotes exist because there is a space in the group name. This is for when we are installing the virtualbox additions, we will need tools from this. Enter that command and hit enter.
+     ```
+     [root@server1 ~]# yum groupinstall -y "Development Tools"
+     ```
+     ![server1 groupinstall Dev Tools](https://media.giphy.com/media/VSM8mrgWgO8fk9axV3/giphy.gif)
+
+   * Server1 is our graphical machine and we need to install the desktop using ```yum groupinstall -y "X Window System" "MATE Desktop"```. This is case sensitive. We want to put on the MATE Desktop and it's a simple desktop meant for a server environment. It still has a lot of software, but it's the simple minimal install first to work from the CLI and then we can add the packages faster after starting from a minimal install. We only need this on our server1 because we want to make sure our graphical environment is setup before we install our guest additions.
+     ```
+     [root@server1 ~]# yum groupinstall -y "X Window System" "MATE Desktop"
+     ```
+     ![server1 groupinstall packages](https://media.giphy.com/media/a5qtJ1MMfu817rMPCy/giphy.gif)
+
+   * We now need to make the system use the newly installed packages. We will use ```systemctl``` the service management tool and set the default ```set-default``` to the run level which is known as the ```graphical.target```.
+     ```
+     [root@server1 ~]# systemctl set-default graphical.target
+     ```
+     ![server1 systemctl](https://media.giphy.com/media/upUwVXofc4BdY5C90P/giphy.gif)
+
+   * Now we need to make sure we enter that environment using the ```isolate``` command to take us through to our graphical target ```systemctl isolate graphical.target```. Once you are completed we will do some similar tasks with server2, but nothing regarding the graphical interface.
+     ```
+     [root@server1 ~]# systemctl isolate graphical.target
+     ```
+     ![server1 systemctl isolate](https://media.giphy.com/media/drrOiJKF8mkrVHGxCK/giphy.gif)
+
+     You will know you completed it when it looks like this.
+     ![server1 graphical environment](https://media.giphy.com/media/ycy348ewvMKvnEuMG7/giphy.gif)
 
 *  ### Add Guest Additions <a name="guest-additions"></a>
 
