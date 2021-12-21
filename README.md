@@ -55,16 +55,16 @@ In this demonstration you will need to have an open lab, and some basic knowledg
 1.  By entering ```cat /etc/system-release``` on the CLI, you will see we are using CentOS Linux 7.9.2009. (Core) on the current system. The command ```cat``` is to display a file's contents. You can see below that there is only one line after the command entered.
     *  CLI using the __Shell__ language, in Github it's called __Console__.  
     I will be teaching you commands by using the "__console__" format on the CLI.
-      ```console
-      [cellis@master ~]$ cat /etc/system-release
-      CentOS Linux release 7.9.2009 (Core)
-      ```
+       ```console
+       [cellis@master ~]$ cat /etc/system-release
+       CentOS Linux release 7.9.2009 (Core)
+       ```   
        *  CLI using the __Python__ language, which is Linux's default language.  
        There are other languages, but that's not what this crash course is for.  
-         ```python
-         [cellis@master ~]$ cat /etc/system-release
-         CentOS Linux release 7.9 (Core)
-         ```
+          ```python
+          [cellis@master ~]$ cat /etc/system-release
+          CentOS Linux release 7.9 (Core)
+          ```
 
 2.  This is a fun shortcut within the CLI: ```wc -l !$```  
 This allows you to check the word count ```wc```  
@@ -72,11 +72,11 @@ While also using the option newline ```-l```
 Then using our last argument ```!$```  
 Which happens to be ```/etc/system-release```.
     *  Below you will see the command under what you just typed, and the following line shows you the   option of newline ```-l``` for the file we previously searched for using ```cat```. Now as you see below we are using the word count function ```wc``` using option  ```-l``` to count the lines in the file, instead of counting the entire file's word count.
-      ```console
-      [cellis@master ~]$ wc -l !$
-      wc -l /etc/system-release
-      1 /etc/system-release
-      ```
+       ```console
+       [cellis@master ~]$ wc -l !$
+       wc -l /etc/system-release
+       1 /etc/system-release
+       ```
        *  Shown below you can see the entire ```wc``` of the ```/etc/system-release``` file including: bytes, characters and lines, but not in that order.  
        The true order for `wc` is as follows:  newline, word, character, byte, maximum length.  
           *  newline ```-l```
@@ -145,27 +145,23 @@ Which happens to be ```/etc/system-release```.
        [cellis@master ~]$ ls -l /dev/pts/0
        crw--w----. 1 cellis tty 136, 0 Oct  1 04:46 /dev/pts/0
        ```
-
     *  Here we are listing using `ls` then listing one file per line `-l`, known as long list.  
     If we use the ```$(tty)```, this evaluates the tty command within the parenthesis which allows the path through to the device. This is shorter than typing out the long list for the entire file ```ls -l /dev/pts/0```.
        ```console
        [cellis@master ~]$ ls -l $(tty)
        crw--w----. 1 cellis tty 136, 0 Oct  1 04:46 /dev/pts/0
        ```
-
     *  If you look at the 2nd w shown here -> ```crw--(w)----```, this is the group write permissions.  
     What this means is that the group can write to my console, which really means anybody on the system write a message to my console.
        ```console
        crw--w----. 1 cellis tty 136, 0 Oct  1 04:46 /dev/pts/0
        ```
-
     *  If we type the command messaging no -> ```mesg n```. This will disable the write permission for the group for this console. Follow this command by ```ls -l $(tty)``` to check the file after the command.
        ```console
        [cellis@master ~]$ mesg n
        [cellis@master ~]$ ls -l $(tty)
        crw-------. 1 cellis tty 136, 0 Oct  1 04:46 /dev/pts/0
-       ```
-        
+       ```      
     *  As you can see above the write permission under the group was removed. Down below you can turn this function back on using ```mesg y```. Follow that up by using ```ls -l $(tty)``` to check the file.
        ```console
        [cellis@master ~]$ mesg y
