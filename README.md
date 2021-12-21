@@ -411,8 +411,7 @@ You will need to create a lab using a [Hypervisor](#vmhypevisor) and the most li
   * If one of those connections isn't up or isn't showing us our IP address we can do ```nmcli conn up enp0s3``` and ```nmcli conn up enp0s8``` to bring both interfaces up if they aren't.
   ```
   [root@server1 ~]# nmcli conn up enp0s3
-  ```
-  or
+  ```  
   ```
   [root@server1 ~]# nmcli conn up enp0s8
   ```   
