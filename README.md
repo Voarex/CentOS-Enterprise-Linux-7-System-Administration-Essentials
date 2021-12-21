@@ -384,8 +384,8 @@ You will need to create a lab using a [Hypervisor](#vmhypevisor) and the most li
   *  Leave the Full Name blank,  
   Enter your username,  
   add to Administration Wheel,  
-  and choose a password.  
-  Confirm by clicking "Done" twice  
+  and choose a password,  
+  Confirm by clicking "Done" twice if your password is weak.  
   ![server1 User Password](https://media.giphy.com/media/nDNCsFyKN39r30doap/giphy.gif)
   *  Click Finish Config.  
   ![server1 Finish Config & Reboot](https://media.giphy.com/media/SOsPpdRhkJh9qtjMx1/giphy.gif)
@@ -400,30 +400,31 @@ You will need to create a lab using a [Hypervisor](#vmhypevisor) and the most li
   ```
   [root@server1 ~]# ip a s
   ```   
-  ![server configure networking ip]()  
+  ![server configure networking ip](https://media.giphy.com/media/Rsz09sygeL9BajMUXz/giphy.gif)  
 
   * If you are not seeing the address you can CTRL + L (Clear) and use ```nmcli conn show```, looking at the results we can see the connections we have.
   ```
   [root@server1 ~]# nmcli conn show
   ```   
-  ![server configure networking ip connections]()
+  ![server configure networking ip connections](https://media.giphy.com/media/GKkCPaBN7vtMDBystC/giphy.gif)
 
-  * If one of those connections isn't up or isn't showing us our IP address we can do ```nmcli conn up enp0s3``` and ```nmcli conn up enp0s8``` to show both interfaces.
+  * If one of those connections isn't up or isn't showing us our IP address we can do ```nmcli conn up enp0s3``` and ```nmcli conn up enp0s8``` to bring both interfaces up if they aren't.
   ```
   [root@server1 ~]# nmcli conn up enp0s3
   ```
+  or
   ```
   [root@server1 ~]# nmcli conn up enp0s8
   ```   
-  ![server1 configure networking ip connections]())
+  ![server1 configure networking ip connections](https://media.giphy.com/media/GKkCPaBN7vtMDBystC/giphy.gif)
 
   * You can do ```ip a s``` to verify they are connected to the network. However we need to make sure this happens all the time.  
   ```
   [root@server1 ~]# ip a s
   ```   
-  ![server configure networking ip]()
+  ![server configure networking ip](https://media.giphy.com/media/ZmuC9XTbsQGbQjDBL1/giphy.gif)
 
-  * In order to make sure the connections are verified all the time, we need to do some commans under root very carefully. The command we are going to run is CASE SENSITIVE. We will run sed for stream editing and -i for in-place edits, and s/ searching for the string. The forward slashes separate: ```sed -i s/ONBOOT=no/ONBOOT=yes/ /etc/sysconfig/network-scripts/ifcfg-enp0s3```. If you use tab complete for most of your directories it will autocomplete ensuring less mistakes are made. Using the Up arrow key you can do the same for the enpo0s8, by removing the 3 and replacing with the 8. ```sed -i s/ONBOOT=no/ONBOOT=yes/ /etc/sysconfig/network-scripts/ifcfg-enp0s3```. We can search the text within a file using ```grep```. ```grep ONBOOT !$``` !$ for the last argument, and then up arrow and repeat for both ```grep ONBOOT /etc/sysconfig/netwwork-scripts/ifcfg-enp0s3```.
+  * In order to make sure the connections are verified all the time, we need to do some commans under root very carefully. The command we are going to run is CASE SENSITIVE. We will run sed for stream editing and -i for in-place edits, and s/ searching for the string. The forward slashes separate: ```sed -i s/ONBOOT=no/ONBOOT=yes/ /etc/sysconfig/network-scripts/ifcfg-enp0s3```. If you use tab complete for most of your directories it will autocomplete ensuring less mistakes are made. Forward slashes are our path separator. Using the Up arrow key you can do the same for the enpo0s8, by removing the 3 and replacing with the 8. ```sed -i s/ONBOOT=no/ONBOOT=yes/ /etc/sysconfig/network-scripts/ifcfg-enp0s8```. We can search the text within a file using ```grep```. ```grep ONBOOT !$``` !$ for the last argument, and then up arrow and repeat for both ```grep ONBOOT /etc/sysconfig/netwwork-scripts/ifcfg-enp0s3```.
   ```  
   [root@server1 ~]# sed -i s/ONBOOT=no/ONBOOT=yes/ /etc/sysconfig/network-scripts/ifcfg-enp0s3
   [root@server1 ~]# sed -i s/ONBOOT=no/ONBOOT=yes/ /etc/sysconfig/network-scripts/ifcfg-enp0s8
@@ -434,7 +435,7 @@ You will need to create a lab using a [Hypervisor](#vmhypevisor) and the most li
   ONBOOT="yes"
   [root@server1 ~]#
   ```  
-  ![server1 configure networking onboot]()
+  ![server1 configure networking onboot](https://media.giphy.com/media/pzLwJlEQhwfjBKVMXL/giphy.gif)
 
 
 *  ### Installing X <a name="install-x"></a>
