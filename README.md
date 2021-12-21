@@ -424,16 +424,16 @@ You will need to create a lab using a [Hypervisor](#vmhypevisor) and the most li
   ![server configure networking ip](https://media.giphy.com/media/ZmuC9XTbsQGbQjDBL1/giphy.gif)
 
   * In order to make sure the connections are verified all the time, we need to do some commans under root very carefully. The command we are going to run is CASE SENSITIVE. We will run sed for stream editing and -i for in-place edits, and s/ searching for the string. The forward slashes separate: ```sed -i s/ONBOOT=no/ONBOOT=yes/ /etc/sysconfig/network-scripts/ifcfg-enp0s3```. If you use tab complete for most of your directories it will autocomplete ensuring less mistakes are made. Forward slashes are our path separator. Using the Up arrow key you can do the same for the enpo0s8, by removing the 3 and replacing with the 8. ```sed -i s/ONBOOT=no/ONBOOT=yes/ /etc/sysconfig/network-scripts/ifcfg-enp0s8```. We can search the text within a file using ```grep```. ```grep ONBOOT !$``` !$ for the last argument, and then up arrow and repeat for both ```grep ONBOOT /etc/sysconfig/netwwork-scripts/ifcfg-enp0s3```.
-  ```  
-  [root@server1 ~]# sed -i s/ONBOOT=no/ONBOOT=yes/ /etc/sysconfig/network-scripts/ifcfg-enp0s3
-  [root@server1 ~]# sed -i s/ONBOOT=no/ONBOOT=yes/ /etc/sysconfig/network-scripts/ifcfg-enp0s8
-  [root@server1 ~]# grep ONBOOT !$
-  grep ONBOOT /etc/sysconfig/network-scripts/ifcfg-enp0s8
-  ONBOOT=yes
-  [root@server1 ~]# grep ONBOOT /etc/sysconfig/network-scripts/ifcfg-enp0s3
-  ONBOOT="yes"
-  [root@server1 ~]#
-  ```  
+    ```  
+    [root@server1 ~]# sed -i s/ONBOOT=no/ONBOOT=yes/ /etc/sysconfig/network-scripts/ifcfg-enp0s3
+    [root@server1 ~]# sed -i s/ONBOOT=no/ONBOOT=yes/ /etc/sysconfig/network-scripts/ifcfg-enp0s8
+    [root@server1 ~]# grep ONBOOT !$
+    grep ONBOOT /etc/sysconfig/network-scripts/ifcfg-enp0s8
+    ONBOOT=yes
+    [root@server1 ~]# grep ONBOOT /etc/sysconfig/network-scripts/ifcfg-enp0s3
+    ONBOOT="yes"
+    [root@server1 ~]#
+    ```  
   ![server1 configure networking onboot](https://media.giphy.com/media/pzLwJlEQhwfjBKVMXL/giphy.gif)
 
 
