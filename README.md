@@ -491,26 +491,56 @@ You will need to create a lab using a [Hypervisor](#vmhypevisor) and the most li
      ![server1 add guest additions restart](https://media.giphy.com/media/DCGHEvxzjFQ7mtujRW/giphy.gif)
 
      *  Now click "Devices" at the top and choose "Insert Guest Additions CD Image".  
-     ![server1 Devices Insert Gues Additions CD Image](https://media.giphy.com/media/9mlsF0wiBVaKLN34UB/giphy.gif)
+     ![server1 Devices Insert Guest Additions CD Image](https://media.giphy.com/media/9mlsF0wiBVaKLN34UB/giphy.gif)
 
      *  Now click "OK" so you can Autorun Prompt.  
      ![server1 Autorun Prompt](https://media.giphy.com/media/eJyN5e2hHvMfmV5B5U/giphy.gif)
 
      * You can click "Run". You will either have a root password authentication or nothing happen.  
      ![server1 Run](https://media.giphy.com/media/gQrUHySd5CyDKNukCo/giphy.gif)  
-     You will either have a root password authentication.  
+     You will either have a root password authentication pop-up.  
      ![server1 Authenticate](https://media.giphy.com/media/FwOQKESriKQ3ziX7kF/giphy.gif)  
      Or nothing happens.  
      ![server1 nothing](https://media.giphy.com/media/Jxry4ogSPLUIUR59kT/giphy.gif)  
 
-     *  You now need to access the MATE Desktop or the CLI within the graphical environment.  
-     ![server1 MATE Desktop](https://media.giphy.com/media/hHypDO4WvF3Wgy3YdK/giphy.gif)
+     *  If nothing happens you will need to access the MATE Terminal as root on the CLI within the graphical environment.  
+     ![server1 MATE Terminal](https://media.giphy.com/media/DwTW0bLOl6DuSRw1ih/giphy.gif)
 
-     *  
+     *  Opening the MATE Terminal to execute commands.
+     ![server1 MATE Terminal Button](https://media.giphy.com/media/hHypDO4WvF3Wgy3YdK/giphy.gif)  
+     ![server1 MATE Terminal Open](https://media.giphy.com/media/GVvjoIoK1cm07hGsU8/giphy.gif)
 
-     *  You have now rebooted.  
+     *  Logging as root with ```su -``` whch stands for super user or in other words root. Then use your root password to login.
+        ```
+        [root@server1 ~]# su -
+        ```  
+        ![server1 MATE Terminal SU](https://media.giphy.com/media/lGR8lt2s2RtsphY9na/giphy.gif)
+
+     *  Next you will run ```mount```.
+     ![server1 MATE Terminal Mount](https://media.giphy.com/media/3LSc8EJIxyjtj0DYh5/giphy.gif)  
+     Now check the bottom of the output to see what we were adding.
+     ![server1 MATE Terminal Mount Output](https://media.giphy.com/media/GASJXzilksMhiRNOKn/giphy.gif)
+
+     *  You will begin by typing the output into the command line except by using TAB to complete words. Just use as few characters as possible to finish the word and you can always double tab to find available directories. We will use ```/run/media/username/Vbox_GAs_6.1.30/VBoxLinuxAdditions.run``` as the command but Tab Complete as many full words as possible.  
+     ![server1 MATE Terminal Mount Output Run](https://media.giphy.com/media/UGdFbaF0JiMbN6UrLR/giphy.gif)  
+     You can see it was completed!  
+     ![server1 Mate Terminal Mount Output Completed](https://media.giphy.com/media/OpOHMsAi25MDB5aGLd/giphy.gif)
+
+     *  You will now need to reboot by typing in the command ```reboot```.   
+        ![server1 MATE Terminal Reboot](https://media.giphy.com/media/qZs0Us3CGGmXOsNKrQ/giphy.gif)  
+        Rebooting.  
+        ![server1 Rebooting](https://media.giphy.com/media/iWU013mMrxDVLyKIeR/giphy.gif)
+
+     *  You have now rebooted and will need to login.  
      ![server1 Rebooted](https://media.giphy.com/media/DCGHEvxzjFQ7mtujRW/giphy.gif)  
-     You can use your Host Key + F(Right Ctrl + F) for full-screen and redraw the environment. If you'd like to get rid of the DVD on the desktop you can Right Click the DVD and scroll down to Eject. Now we need to do this to Server2 but we do NOT need the graphical environment.
+
+     *  You can see the new DVD called Vbox_GAs_6.  
+     ![server1 VBox on Desktop](https://media.giphy.com/media/Jxry4ogSPLUIUR59kT/giphy.gif)  
+     Now let's get rid of the DVD by right clicking selecting eject.  
+     ![server1 VBox Deleted via Eject](https://media.giphy.com/media/JpuFoGpJCNhX8XU0WD/giphy.gif)  
+
+     * You can use your Host Key + F (Right Ctrl + F) for full-screen and redraw the environment. If you'd like to get rid of the DVD on the desktop you can Right Click the DVD and scroll down to Eject. Now we need to do this to Server2 but we do NOT need the graphical environment.
+
 
 *  ### Help and Archiving <a name="help"></a>
 
