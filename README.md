@@ -516,7 +516,7 @@ You will need to create a lab using a [Hypervisor](#vmhypevisor) and the most li
         ```  
         ![server1 MATE Terminal SU](https://media.giphy.com/media/lGR8lt2s2RtsphY9na/giphy.gif)
 
-     *  Next you will run ```mount```.
+     *  Next you will run ```mount```.  
      ![server1 MATE Terminal Mount](https://media.giphy.com/media/3LSc8EJIxyjtj0DYh5/giphy.gif)  
      Now check the bottom of the output to see what we were adding.  
      ![server1 MATE Terminal Mount Output](https://media.giphy.com/media/GASJXzilksMhiRNOKn/giphy.gif)
