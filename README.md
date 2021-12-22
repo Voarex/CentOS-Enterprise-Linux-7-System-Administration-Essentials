@@ -56,13 +56,13 @@ In this demonstration you will need to have an open lab, and some basic knowledg
     *  CLI using the __Shell__ language, in Github it's called __Console__.  
     I will be teaching you commands by using the "__console__" format on the CLI.
        ```console
-       [cellis@master ~]$ cat /etc/system-release
+       [user@master ~]$ cat /etc/system-release
        CentOS Linux release 7.9.2009 (Core)
        ```   
     *  CLI using the __Python__ language, which is Linux's default language.  
     There are other languages, but that's not what this crash course is for.  
        ```python
-       [cellis@master ~]$ cat /etc/system-release
+       [user@master ~]$ cat /etc/system-release
        CentOS Linux release 7.9 (Core)
        ```
 
@@ -73,7 +73,7 @@ Then using our last argument ```!$```
 Which happens to be ```/etc/system-release```.
     *  Below you will see the command under what you just typed, and the following line shows you the   option of newline ```-l``` for the file we previously searched for using ```cat```. Now as you see below we are using the word count function ```wc``` using option  ```-l``` to count the lines in the file, instead of counting the entire file's word count.
        ```console
-       [cellis@master ~]$ wc -l !$
+       [user@master ~]$ wc -l !$
        wc -l /etc/system-release
        1 /etc/system-release
        ```
@@ -85,13 +85,13 @@ Which happens to be ```/etc/system-release```.
           *  byte ```-b```
           *  maximum line length ```-L```
             ```console
-            [cellis@master ~]$ wc /etc/system-release
+            [user@master ~]$ wc /etc/system-release
             1  5 37  /etc/system-release
             ```
 
 3.  If I want to check the date we can do that using the command ```date```.
     ```console
-    [cellis@master ~]$ date
+    [user@master ~]$ date
     Fri Oct 1 03:57:58 EDT 2021
     ```    
     *  If you'd like to check a future date, you can use ```date --date "40 days"```.
@@ -112,7 +112,7 @@ Which happens to be ```/etc/system-release```.
 
 5.  By entering ```python``` on the CLI, you are able to do more complex math calculations as well as use python for scripting. We will just use it for math right now.
     ```console
-    [cellis@master ~]$ python
+    [user@master ~]$ python
     Python 2.7.5 (default, Nov 16 2020, 22:23:17)
     [GCC 4.8.5 20150623 (Red Hat 4.8.5-44)] on linux2
     Type "help", "copyright", "credits" or "license" for more information.
@@ -121,7 +121,7 @@ Which happens to be ```/etc/system-release```.
     *  If you'd like to see how many hosts you can have on your network you use python.  
     All you would do is use ```2``` to the power of ```**``` the amount of bits ```8``` minus 2 ```-2```. The amount of hosts we can have on the network is *254*, but if we squeeze some more bits out of the network ```>>> 2**12-2``` we can manage *4094*.
        ```console
-       [cellis@master ~]$ python
+       [user@master ~]$ python
        Python 2.7.5 (default, Nov 16 2020, 22:23:17)
        [GCC 4.8.5 20150623 (Red Hat 4.8.5-44)] on linux2
        Type "help", "copyright", "credits" or "license" for more information.
@@ -136,37 +136,37 @@ Which happens to be ```/etc/system-release```.
 
 6.  By entering ```tty```, this will show you what terminal you are connected to. I am remote accessing the system via a secure shell -> ssh pseudo terminal. This pseudo terminal device we are connected to is actually also a file in the file system.
     ```console
-    [cellis@master ~]$ tty
+    [user@master ~]$ tty
     /dev/pts/0
     ```
 
     *  If you want to see a long listing of this, you can type it all out if you like.
        ```console
-       [cellis@master ~]$ ls -l /dev/pts/0
-       crw--w----. 1 cellis tty 136, 0 Oct  1 04:46 /dev/pts/0
+       [user@master ~]$ ls -l /dev/pts/0
+       crw--w----. 1 user tty 136, 0 Oct  1 04:46 /dev/pts/0
        ```
     *  Here we are listing using `ls` then listing one file per line `-l`, known as long list.  
     If we use the ```$(tty)```, this evaluates the tty command within the parenthesis which allows the path through to the device. This is shorter than typing out the long list for the entire file ```ls -l /dev/pts/0```.
        ```console
-       [cellis@master ~]$ ls -l $(tty)
-       crw--w----. 1 cellis tty 136, 0 Oct  1 04:46 /dev/pts/0
+       [user@master ~]$ ls -l $(tty)
+       crw--w----. 1 user tty 136, 0 Oct  1 04:46 /dev/pts/0
        ```
     *  If you look at the 2nd w shown here -> ```crw--(w)----```, this is the group write permissions.  
-    What this means is that the group can write to my console, which really means anybody on the system write a message to my console.
+    What this means is that the group can write to my console, which really means anybody on the system can write a message to my console.
        ```console
-       crw--w----. 1 cellis tty 136, 0 Oct  1 04:46 /dev/pts/0
+       crw--w----. 1 user tty 136, 0 Oct  1 04:46 /dev/pts/0
        ```
     *  If we type the command messaging no -> ```mesg n```. This will disable the write permission for the group for this console. Follow this command by ```ls -l $(tty)``` to check the file after the command.
        ```console
-       [cellis@master ~]$ mesg n
-       [cellis@master ~]$ ls -l $(tty)
-       crw-------. 1 cellis tty 136, 0 Oct  1 04:46 /dev/pts/0
+       [user@master ~]$ mesg n
+       [user@master ~]$ ls -l $(tty)
+       crw-------. 1 user tty 136, 0 Oct  1 04:46 /dev/pts/0
        ```      
     *  As you can see above the write permission under the group was removed. Down below you can turn this function back on using ```mesg y```. Follow that up by using ```ls -l $(tty)``` to check the file.
        ```console
-       [cellis@master ~]$ mesg y
-       [cellis@master ~]$ ls -l $(tty)
-       crw--w----. 1 cellis tty 136, 0 Oct  1 04:46 /dev/pts/0
+       [user@master ~]$ mesg y
+       [user@master ~]$ ls -l $(tty)
+       crw--w----. 1 user tty 136, 0 Oct  1 04:46 /dev/pts/0
        ```
 
 * ### Demo Recap <a name="demo-recap"></a>
@@ -397,96 +397,120 @@ You will need to create a lab using a [Hypervisor](#vmhypevisor) and the most li
 
 * ### Configure CentOS 7 Networking <a name="configure-centos-network"></a>
 
-  * You will connect to server1 and login as root and you can connect to the VM using an SSH client if you like. Once connected to server1 you will insert the command: ```ip a s```, which stands for IP Address Show.      
+  *  You will connect to server1 and login as root and you can connect to the VM using an SSH client if you like. Once connected to server1 you will insert the command: ```ip a s```, which stands for IP Address Show.      
     ```
     [root@server1 ~]# ip a s
     ```   
     ![server configure networking ip](https://media.giphy.com/media/Rsz09sygeL9BajMUXz/giphy.gif)  
 
-  * If you are not seeing the address you can CTRL + L (Clear) and use ```nmcli conn show```, looking at the results we can see the connections we have.
+  *  If you are not seeing the address you can CTRL + L (Clear) and use ```nmcli conn show```, looking at the results we can see the connections we have.
     ```
     [root@server1 ~]# nmcli conn show
     ```   
     ![server configure networking ip connections](https://media.giphy.com/media/GKkCPaBN7vtMDBystC/giphy.gif)
 
-  * If one of those connections isn't up or isn't showing us our IP address we can do ```nmcli conn up enp0s3``` and ```nmcli conn up enp0s8``` to bring both interfaces up if they aren't.
-    ```
-    [root@server1 ~]# nmcli conn up enp0s3
-    ```  
-    ```
-    [root@server1 ~]# nmcli conn up enp0s8
-    ```   
-    ![server1 configure networking ip connections](https://media.giphy.com/media/GKkCPaBN7vtMDBystC/giphy.gif)
+  *  If one of those connections isn't up or isn't showing us our IP address we can do ```nmcli conn up enp0s3``` and ```nmcli conn up enp0s8``` to bring both interfaces up if they aren't.
+     ```
+     [root@server1 ~]# nmcli conn up enp0s3
+     ```  
+     ```
+     [root@server1 ~]# nmcli conn up enp0s8
+     ```   
+     ![server1 configure networking ip connections](https://media.giphy.com/media/GKkCPaBN7vtMDBystC/giphy.gif)
 
-  * You can do ```ip a s``` to verify they are connected to the network. However we need to make sure this happens all the time.  
-    ```
-    [root@server1 ~]# ip a s
-    ```   
-    ![server configure networking ip](https://media.giphy.com/media/ZmuC9XTbsQGbQjDBL1/giphy.gif)
+  *  You can do ```ip a s``` to verify they are connected to the network. However we need to make sure this happens all the time.  
+     ```
+     [root@server1 ~]# ip a s
+     ```   
+     ![server configure networking ip](https://media.giphy.com/media/ZmuC9XTbsQGbQjDBL1/giphy.gif)
 
-  * In order to make sure the connections are verified all the time, we need to do some commans under root very carefully. The command we are going to run is CASE SENSITIVE. We will run sed for stream editing and -i for in-place edits, and s/ searching for the string. The forward slashes separate: ```sed -i s/ONBOOT=no/ONBOOT=yes/ /etc/sysconfig/network-scripts/ifcfg-enp0s3```. If you use tab complete for most of your directories it will autocomplete ensuring less mistakes are made. Forward slashes are our path separator. Using the Up arrow key you can do the same for the enpo0s8, by removing the 3 and replacing with the 8. ```sed -i s/ONBOOT=no/ONBOOT=yes/ /etc/sysconfig/network-scripts/ifcfg-enp0s8```. We can search the text within a file using ```grep```. ```grep ONBOOT !$``` !$ for the last argument, and then up arrow and repeat for both ```grep ONBOOT /etc/sysconfig/netwwork-scripts/ifcfg-enp0s3```.
-    ```  
-    [root@server1 ~]# sed -i s/ONBOOT=no/ONBOOT=yes/ /etc/sysconfig/network-scripts/ifcfg-enp0s3
-    [root@server1 ~]# sed -i s/ONBOOT=no/ONBOOT=yes/ /etc/sysconfig/network-scripts/ifcfg-enp0s8
-    [root@server1 ~]# grep ONBOOT !$
-    grep ONBOOT /etc/sysconfig/network-scripts/ifcfg-enp0s8
-    ONBOOT=yes
-    [root@server1 ~]# grep ONBOOT /etc/sysconfig/network-scripts/ifcfg-enp0s3
-    ONBOOT="yes"
-    [root@server1 ~]#
-    ```  
-    ![server1 configure networking onboot](https://media.giphy.com/media/pzLwJlEQhwfjBKVMXL/giphy.gif)
+  *  In order to make sure the connections are verified all the time, we need to do some commans under root very carefully. The command we are going to run is CASE SENSITIVE. We will run sed for stream editing and -i for in-place edits, and s/ searching for the string. The forward slashes separate: ```sed -i s/ONBOOT=no/ONBOOT=yes/ /etc/sysconfig/network-scripts/ifcfg-enp0s3```. If you use tab complete for most of your directories it will autocomplete ensuring less mistakes are made. Forward slashes are our path separator. Using the Up arrow key you can do the same for the enpo0s8, by removing the 3 and replacing with the 8. ```sed -i s/ONBOOT=no/ONBOOT=yes/ /etc/sysconfig/network-scripts/ifcfg-enp0s8```. We can search the text within a file using ```grep```. ```grep ONBOOT !$``` !$ for the last argument, and then up arrow and repeat for both ```grep ONBOOT /etc/sysconfig/netwwork-scripts/ifcfg-enp0s3```.
+     ```  
+     [root@server1 ~]# sed -i s/ONBOOT=no/ONBOOT=yes/ /etc/sysconfig/network-scripts/ifcfg-enp0s3
+     [root@server1 ~]# sed -i s/ONBOOT=no/ONBOOT=yes/ /etc/sysconfig/network-scripts/ifcfg-enp0s8
+     [root@server1 ~]# grep ONBOOT !$
+     grep ONBOOT /etc/sysconfig/network-scripts/ifcfg-enp0s8
+     ONBOOT=yes
+     [root@server1 ~]# grep ONBOOT /etc/sysconfig/network-scripts/ifcfg-enp0s3
+     ONBOOT="yes"
+     [root@server1 ~]#
+     ```  
+     ![server1 configure networking onboot](https://media.giphy.com/media/pzLwJlEQhwfjBKVMXL/giphy.gif)
 
 
 *  ### Installing X <a name="install-x"></a>
    Here we will still be connected to server1 as root. We will be installing x.
 
-   * We will check for updates using the command ```yum update``` you can also run ```yum update -y``` if you don't want to manually accept the packages you are updating to.
-     ```
-     [root@server1 ~]# yum update -y
-     ```
-     ![server1 yum update](https://media.giphy.com/media/tkDGtpR3UVM0ZVlU7t/giphy.gif)
+   *  We will check for updates using the command ```yum update``` you can also run ```yum update -y``` if you don't want to manually accept the packages you are updating to.
+      ```
+      [root@server1 ~]# yum update -y
+      ```
+      ![server1 yum update](https://media.giphy.com/media/tkDGtpR3UVM0ZVlU7t/giphy.gif)
 
-   * We will now add some additional software. We are going to run ```yum install -y``` using the ```-y``` so we don't accept prompts to continue. We will separate any packages by using a space as it's the default separator within the command line shell. We will be installing ```redhat-lsb-core``` and also ```net-tools``` that are common packages we can use all the time. We will include ```epel-release``` which will put on a new software repository. This will allow us to access the MATE desktop graphical environment we want to use. It's important to do ```yum update``` first because of the ```kernel-headers``` to ensure they match the kernel and the headers for the development tools we will get. We need ```kernel-devel``` devel for development. This is the driver and software for the guest additions. The entire command is: ```yum install -y redbat-lsb-core net-tools epel-release kernel-headers kernel-devel```
-     ```
-     [root@server1 ~]# yum install -y redbat-lsb-core net-tools epel-release kernel-headers kernel-devel
-     ```
-     ![server1 yum install](https://media.giphy.com/media/l6bl7UefcvkpCSTIaa/giphy.gif)  
-     After completion  
-     ![server1 yum install complete](https://media.giphy.com/media/FqceGtmGeNnbmlcNMN/giphy.gif)
+   *  We will now add some additional software. We are going to run ```yum install -y``` using the ```-y``` so we don't accept prompts to continue. We will separate any packages by using a space as it's the default separator within the command line shell. We will be installing ```redhat-lsb-core``` and also ```net-tools``` that are common packages we can use all the time. We will include ```epel-release``` which will put on a new software repository. This will allow us to access the MATE desktop graphical environment we want to use. It's important to do ```yum update``` first because of the ```kernel-headers``` to ensure they match the kernel and the headers for the development tools we will get. We need ```kernel-devel``` devel for development. This is the driver and software for the guest additions. The entire command is: ```yum install -y redbat-lsb-core net-tools epel-release kernel-headers kernel-devel```
+      ```
+      [root@server1 ~]# yum install -y redbat-lsb-core net-tools epel-release kernel-headers kernel-devel
+      ```
+      ![server1 yum install](https://media.giphy.com/media/l6bl7UefcvkpCSTIaa/giphy.gif)  
+      After completion  
+      ![server1 yum install complete](https://media.giphy.com/media/FqceGtmGeNnbmlcNMN/giphy.gif)
 
-   * Now that you have completed you can clear the screen ctrl + L and we are going to be installing a group of packages. The command ```yum groupinstall -y "Development Tools"``` is a groupinstall and the quotes exist because there is a space in the group name. This is for when we are installing the virtualbox additions, we will need tools from this. Enter that command and hit enter.
-     ```
-     [root@server1 ~]# yum groupinstall -y "Development Tools"
-     ```
-     ![server1 groupinstall Dev Tools](https://media.giphy.com/media/VSM8mrgWgO8fk9axV3/giphy.gif)
+   *  Now that you have completed you can clear the screen ctrl + L and we are going to be installing a group of packages. The command ```yum groupinstall -y "Development Tools"``` is a groupinstall and the quotes exist because there is a space in the group name. This is for when we are installing the virtualbox additions, we will need tools from this. Enter that command and hit enter.
+      ```
+      [root@server1 ~]# yum groupinstall -y "Development Tools"
+      ```
+      ![server1 groupinstall Dev Tools](https://media.giphy.com/media/VSM8mrgWgO8fk9axV3/giphy.gif)
 
-   * Server1 is our graphical machine and we need to install the desktop using ```yum groupinstall -y "X Window System" "MATE Desktop"```. This is case sensitive. We want to put on the MATE Desktop and it's a simple desktop meant for a server environment. It still has a lot of software, but it's the simple minimal install first to work from the CLI and then we can add the packages faster after starting from a minimal install. We only need this on our server1 because we want to make sure our graphical environment is setup before we install our guest additions.
-     ```
-     [root@server1 ~]# yum groupinstall -y "X Window System" "MATE Desktop"
-     ```
-     ![server1 groupinstall packages](https://media.giphy.com/media/a5qtJ1MMfu817rMPCy/giphy.gif)
+   *  Server1 is our graphical machine and we need to install the desktop using ```yum groupinstall -y "X Window System" "MATE Desktop"```. This is case sensitive. We want to put on the MATE Desktop and it's a simple desktop meant for a server environment. It still has a lot of software, but it's the simple minimal install first to work from the CLI and then we can add the packages faster after starting from a minimal install. We only need this on our server1 because we want to make sure our graphical environment is setup before we install our guest additions.
+      ```
+      [root@server1 ~]# yum groupinstall -y "X Window System" "MATE Desktop"
+      ```
+      ![server1 groupinstall packages](https://media.giphy.com/media/a5qtJ1MMfu817rMPCy/giphy.gif)
 
-   * We now need to make the system use the newly installed packages. We will use ```systemctl``` the service management tool and set the default ```set-default``` to the run level which is known as the ```graphical.target```.
-     ```
-     [root@server1 ~]# systemctl set-default graphical.target
-     ```
-     ![server1 systemctl](https://media.giphy.com/media/upUwVXofc4BdY5C90P/giphy.gif)
+   *  We now need to make the system use the newly installed packages. We will use ```systemctl``` the service management tool and set the default ```set-default``` to the run level which is known as the ```graphical.target```.
+      ```
+      [root@server1 ~]# systemctl set-default graphical.target
+      ```
+      ![server1 systemctl](https://media.giphy.com/media/upUwVXofc4BdY5C90P/giphy.gif)
 
-   * Now we need to make sure we enter that environment using the ```isolate``` command to take us through to our graphical target ```systemctl isolate graphical.target```. Once you are completed we will do some similar tasks with server2, but nothing regarding the graphical interface.
-     ```
-     [root@server1 ~]# systemctl isolate graphical.target
-     ```
-     ![server1 systemctl isolate](https://media.giphy.com/media/drrOiJKF8mkrVHGxCK/giphy.gif)
-
-     You will know you completed it when it looks like this.
-     ![server1 graphical environment](https://media.giphy.com/media/DCGHEvxzjFQ7mtujRW/giphy.gif)
+   *  Now we need to make sure we enter that environment using the ```isolate``` command to take us through to our graphical target ```systemctl isolate graphical.target```. Once you are completed we will do some similar tasks with server2, but nothing regarding the graphical interface.
+      ```
+      [root@server1 ~]# systemctl isolate graphical.target
+      ```
+      ![server1 systemctl isolate](https://media.giphy.com/media/drrOiJKF8mkrVHGxCK/giphy.gif)  
+      You will know you completed it when it looks like this.
+      ![server1 graphical environment](https://media.giphy.com/media/DCGHEvxzjFQ7mtujRW/giphy.gif)
 
 *  ### Add Guest Additions <a name="guest-additions"></a>
-   We will now be installing the guest additions on our server1 and on both ideally. Especially for the graphical machine, this will allow you to display graphics and go into a full-screen mode and cut/paste. If you are in the virtual machine and want to leave you need to his the Host Key. For windows its the Right Ctrl Button, but for OSX it's Left Command Key. Let's reboot the virtual machine by going to the top right and clicking the power button > restart.  
+   We will now be installing the guest additions on our server1 and on both ideally. Especially for the graphical machine, this will allow you to display graphics and go into a full-screen mode and cut/paste. If you are in the virtual machine and want to leave you need to his the Host Key. For windows its the Right Ctrl Button, but for OSX it's Left Command Key.
+
+   *  Let's reboot the virtual machine by going to the top right and clicking the power button > restart.  
    ![server1 add guest additions restart](https://media.giphy.com/media/lu93Vd5Ez4lptgvBiH/giphy.gif)
 
-   *
+     *  Now go ahead and login as your user and you should see your desktop.   
+     ![server1 add guest additions restart](https://media.giphy.com/media/DCGHEvxzjFQ7mtujRW/giphy.gif)
+
+     *  Now click "Devices" at the top and choose "Insert Guest Additions CD Image".  
+     ![server1 Devices Insert Gues Additions CD Image](https://media.giphy.com/media/9mlsF0wiBVaKLN34UB/giphy.gif)
+
+     *  Now click "OK" so you can Autorun Prompt.  
+     ![server1 Autorun Prompt](https://media.giphy.com/media/eJyN5e2hHvMfmV5B5U/giphy.gif)
+
+     * You can click "Run". You will either have a root password authentication or nothing happen.  
+     ![server1 Run](https://media.giphy.com/media/gQrUHySd5CyDKNukCo/giphy.gif)  
+     You will either have a root password authentication.  
+     ![server1 Authenticate](https://media.giphy.com/media/FwOQKESriKQ3ziX7kF/giphy.gif)  
+     Or nothing happens.  
+     ![server1 nothing](https://media.giphy.com/media/Jxry4ogSPLUIUR59kT/giphy.gif)  
+
+     *  You now need to access the MATE Desktop or the CLI within the graphical environment.  
+     ![server1 MATE Desktop](https://media.giphy.com/media/hHypDO4WvF3Wgy3YdK/giphy.gif)
+
+     *  
+
+     *  You have now rebooted.  
+     ![server1 Rebooted](https://media.giphy.com/media/DCGHEvxzjFQ7mtujRW/giphy.gif)  
+     You can use your Host Key + F(Right Ctrl + F) for full-screen and redraw the environment. If you'd like to get rid of the DVD on the desktop you can Right Click the DVD and scroll down to Eject. Now we need to do this to Server2 but we do NOT need the graphical environment.
 
 *  ### Help and Archiving <a name="help"></a>
 
