@@ -518,7 +518,7 @@ You will need to create a lab using a [Hypervisor](#vmhypevisor) and the most li
 
      *  Next you will run ```mount```.
      ![server1 MATE Terminal Mount](https://media.giphy.com/media/3LSc8EJIxyjtj0DYh5/giphy.gif)  
-     Now check the bottom of the output to see what we were adding.
+     Now check the bottom of the output to see what we were adding.  
      ![server1 MATE Terminal Mount Output](https://media.giphy.com/media/GASJXzilksMhiRNOKn/giphy.gif)
 
      *  You will begin by typing the output into the command line except by using TAB to complete words. Just use as few characters as possible to finish the word and you can always double tab to find available directories. We will use ```/run/media/username/Vbox_GAs_6.1.30/VBoxLinuxAdditions.run``` as the command but Tab Complete as many full words as possible.  
