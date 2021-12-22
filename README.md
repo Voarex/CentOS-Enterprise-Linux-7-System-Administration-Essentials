@@ -59,12 +59,12 @@ In this demonstration you will need to have an open lab, and some basic knowledg
        [cellis@master ~]$ cat /etc/system-release
        CentOS Linux release 7.9.2009 (Core)
        ```   
-       *  CLI using the __Python__ language, which is Linux's default language.  
-       There are other languages, but that's not what this crash course is for.  
-          ```python
-          [cellis@master ~]$ cat /etc/system-release
-          CentOS Linux release 7.9 (Core)
-          ```
+    *  CLI using the __Python__ language, which is Linux's default language.  
+    There are other languages, but that's not what this crash course is for.  
+       ```python
+       [cellis@master ~]$ cat /etc/system-release
+       CentOS Linux release 7.9 (Core)
+       ```
 
 2.  This is a fun shortcut within the CLI: ```wc -l !$```  
 This allows you to check the word count ```wc```  
