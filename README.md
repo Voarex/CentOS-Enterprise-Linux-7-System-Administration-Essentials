@@ -39,7 +39,7 @@ Inside this repository will be a tutorial on how to go from zero to hero on the 
 
 1. <a name="prereq"></a> *Having a basic understanding of __[System Administration](https://victorops.com/blog/definitive-guide-for-being-a-system-administrator)__ is recommended for this repository and for the Demo, otherwise [Google](www.google.com) is your best friend.*
 
-3. <a name="github"></a> *Having a basic understanding of __[Github](www.github.com)__ will be important if you are not familiar, but I feel that you are already acquainted since you are here at this repository.*
+3. <a name="github"></a> *Having a basic understanding of __[Github](https://github.com)__ will be important if you are not familiar, but I feel that you are already acquainted since you are here at this repository.*
 
 2. <a name="md"></a> *Having a basic understanding of __[Markdown](https://www.markdowntutorial.com/)__ is not required to your abilities on taking this course. It will be essential for you to take notes professionally and staying organized. This will also help you learn how to use [Markdown](https://www.markdowntutorial.com/) by repeatedly writing it by preparing you for an Enterprise level experience. Use Markdown tutorials online, it is quite easy to use.*
 
@@ -480,9 +480,13 @@ You will need to create a lab using a [Hypervisor](#vmhypevisor) and the most li
      ![server1 systemctl isolate](https://media.giphy.com/media/drrOiJKF8mkrVHGxCK/giphy.gif)
 
      You will know you completed it when it looks like this.
-     ![server1 graphical environment](https://media.giphy.com/media/ycy348ewvMKvnEuMG7/giphy.gif)
+     ![server1 graphical environment](https://media.giphy.com/media/DCGHEvxzjFQ7mtujRW/giphy.gif)
 
 *  ### Add Guest Additions <a name="guest-additions"></a>
+   We will now be installing the guest additions on our server1 and on both ideally. Especially for the graphical machine, this will allow you to display graphics and go into a full-screen mode and cut/paste. If you are in the virtual machine and want to leave you need to his the Host Key. For windows its the Right Ctrl Button, but for OSX it's Left Command Key. Let's reboot the virtual machine by going to the top right and clicking the power button > restart.  
+   ![server1 add guest additions restart](https://media.giphy.com/media/lu93Vd5Ez4lptgvBiH/giphy.gif)
+
+   *
 
 *  ### Help and Archiving <a name="help"></a>
 
