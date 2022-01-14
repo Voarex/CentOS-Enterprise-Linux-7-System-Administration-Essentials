@@ -510,7 +510,7 @@ You will need to create a lab using a [Hypervisor](#vmhypevisor) and the most li
      ![server1 MATE Terminal Button](https://media.giphy.com/media/hHypDO4WvF3Wgy3YdK/giphy.gif)  
      ![server1 MATE Terminal Open](https://media.giphy.com/media/GVvjoIoK1cm07hGsU8/giphy.gif)
 
-     *  Logging as root with ```su -``` whch stands for super user or in other words root. Then use your root password to login.
+     *  Logging as root with ```su -``` which stands for super user or in other words root. Then use your root password to login.
         ```
         [root@server1 ~]# su -
         ```  
