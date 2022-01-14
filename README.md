@@ -1,7 +1,7 @@
 
 # CentOS Enterprise Linux 7 - System Administration Essentials
 
-Inside this repository will be a tutorial on how to go from zero to hero on the essentials of CentOS Enterprise Linux 7 System Administration. You will learn by following along, taking notes and using the same commands as I do. (This repository is currently being developed.)
+Inside this repository will be a tutorial on how to go from zero to hero on the essentials of CentOS Enterprise Linux 7 System Administration. You will learn by following along, taking notes and using the same commands as I do. (This repository is currently being developed and may not appear like this at the end.)
 
 ## Table of Contents
 
