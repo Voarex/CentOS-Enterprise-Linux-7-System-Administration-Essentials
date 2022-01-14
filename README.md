@@ -1,7 +1,7 @@
 
 # CentOS Enterprise Linux 7 - System Administration Essentials
 
-Inside this repository will be a tutorial on how to go from zero to hero on the essentials of CentOS Enterprise Linux 7 System Administration. You will learn by following along, taking notes and using the same commands as I do.
+Inside this repository will be a tutorial on how to go from zero to hero on the essentials of CentOS Enterprise Linux 7 System Administration. You will learn by following along, taking notes and using the same commands as I do. (This repository is currently being developed.)
 
 ## Table of Contents
 
@@ -177,7 +177,7 @@ Which happens to be ```/etc/system-release```.
 
 You will need to create a lab using a [Hypervisor](#vmhypevisor) and the most likely scenario is a free or open source software, but you can also use a closed source software if you're willing to pay for more stable features but deal with the certain support resolution restrictions.
 
- 1.  This is where we will use your host machine to connect to your virtual machine. Usually this consists of the following machines; host machine that's using VirtualBox , the CentOS 7 master server, CentOS 7 GUI server1, and CentOS 7 CLI server2. The command line(CLI) server will be more useful to you than the graphical user interface(GUI) serve, because we will be using enterprise systems. Enterprise systems mainly consist of remote connections via the CLI.
+ 1.  This is where we will use your host machine to connect to your virtual machine. Usually this consists of the following machines; host machine that's using VirtualBox , the CentOS 7 master server, CentOS 7 GUI server1, and CentOS 7 CLI server2. The command line(CLI) server will be more useful to you than the graphical user interface(GUI) server, because we will be using enterprise systems. Enterprise systems mainly consist of remote connections via the CLI.
 
  2.  The master system will really be of less use to you since you probably do not have a local web server setup and that requires an installation of CentOS 7 for the web server or ftp server. You can also mimic the same remote installs from a web server by looking at CentOS distributions that are available to download via mirror servers.
 
@@ -234,7 +234,7 @@ You will need to create a lab using a [Hypervisor](#vmhypevisor) and the most li
   During our download of CentOS Linux 7, we will be able to install different types of CentOS as previously mentioned during the overview. We will be using a "Minimal" install for both of our servers because you can always scale up at a later date.
 
   *  If you go to [www.CentOS.org](https://www.centOS.org) you will be given choices with tabs at the top and the two buttons under [The CentOS Project](www.centos.org). We will choose the [CentOS Linux](https://centos.org/centos-linux/) button or click the [Download](https://centos.org/download/) tab.  
-  ![CentOS.org](https://media.giphy.com/media/VmBRZik5Kxw3we4zLa/giphy.gif)
+  ![CentOS.org](https://media.giphy.com/media/bIDT2iLwjYjMlTOEDD/giphy.gif)
 
      *  Once you've chosen CentOS Linux, you will be shown a few options.  
      You will need to select the tab 7 (2009) and choose x86_64.  
